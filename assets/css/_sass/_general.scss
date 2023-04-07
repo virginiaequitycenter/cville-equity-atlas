@@ -49,7 +49,7 @@ article.report-content,
   margin: auto;
 }
 
-@media (min-width: 1069px) {
+@media (min-width: 1360px) {
   .container-lg,
   .responsive-container, 
   header.nav div.nav-card, 
@@ -93,7 +93,7 @@ div.home-page header div.header-image {
   height: 680px;
   position: relative;
   overflow: hidden;
-
+  background-color: rgba(0,0,0,.2);
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -206,7 +206,7 @@ div.hero-container {
   top: -460px;
   // height: 360px;
   background-color: #fff;
-  padding: 2.5rem 1.5rem;
+  padding: 1.5rem 1.5rem;
 }
 
 .flex-item-two {
@@ -307,7 +307,7 @@ a div.hero-container div.flex-item-two p {
 
 .breadcrumb-container {
   background-color: #EBEEF2;//$nav-background;
-  margin-top: 60px;
+  margin-top: 65px;
 }
 
 article.landing-page .breadcrumb-container {

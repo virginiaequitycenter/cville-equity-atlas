@@ -4,7 +4,7 @@ title: Charlottesville Regional Equity Atlas
 description: "An Equity Center Initiative in Democratization of Data to provide tools that enable data rich advocacy in support of community
 building and collective action for change."
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://virginiaequitycenter.github.io/cville-equity-atlas" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://virginiaequitycenter.github.io/cville-equity-atlas"
 twitter_username: EquityCenterUVA
 github_username:  virginiaequitycenter
 # Build settings

@@ -111,7 +111,6 @@ header.nav div.nav-main ul.primary-nav {
     color: $secondary-blue;
     height: 100%;
     padding: 0px;
-    margin-left: 1rem;
 }
 
 .navbar-toggler {
@@ -127,7 +126,7 @@ header.nav div.nav-main ul.primary-nav {
     display: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
     #nav-expanded {
         display: block;
     }
