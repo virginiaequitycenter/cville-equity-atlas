@@ -35,7 +35,7 @@ body.report {
   padding-right: 0;
 }
 
-// .container-lg,
+.container-lg,
 .responsive-container, 
 header.nav div.nav-card,
 footer, 
@@ -50,7 +50,7 @@ article.report-content,
 }
 
 @media (min-width: 1069px) {
-  // .container-lg,
+  .container-lg,
   .responsive-container, 
   header.nav div.nav-card, 
   footer, 
@@ -60,7 +60,7 @@ article.report-content,
   article.page-content,
   .breadcrumbs,
   .attachments, .next-previous, .feeds {
-    max-width: 1000px;
+    max-width: 1320px;
   }
 }
 
