@@ -16,7 +16,7 @@ header.nav .nav-wrap {
     @include flexbox();
     @include align-items(center);
     @include justify-content(space-between);
-background-color: rgba(255,255,255,0.95);
+    background-color: rgba(255,255,255,0.95);
 }
 
 header.nav nav {
@@ -26,37 +26,30 @@ header.nav nav {
     @include flex(auto);
     padding: 0;
     position: relative;
-  }
+}
 
-  header nav.hidden {
-    margin-top: -90px;
-  }
+header nav.hidden {
+margin-top: -90px;
+}
 
-  header nav {
-    transition: margin-top 0.25s;
-  }
+header nav {
+transition: margin-top 0.25s;
+}
 
-  @media (min-width: 1069px) {
-    header.nav div.nav-main {
-        gap: 30px;
-      }
-    
-  }
+header.nav div.nav-main {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+flex: auto;
+padding: 0;
+position: relative;
+height: 65px;
+width: 100vw;
+gap: 15px;
+}
 
-  header.nav div.nav-main {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex: auto;
-    padding: 0;
-    position: relative;
-    height: 65px;
-    width: 100vw;
-    gap: 15px;
-  }
-
-  header.nav div.nav-main ul.primary-nav {
+header.nav div.nav-main ul.primary-nav {
   align-items: center;
   margin: 0;
   height: 100%;
@@ -88,26 +81,27 @@ header.nav nav {
 .nav-container {
     height: 65px;
     line-height: 65px;
+}
 
-    .navbar-nav {
-        height: 100%;
-    }
+.nav-container .navbar-nav {
+    height: 100%;
+}
 
-    .nav-item {
-        font-size: 20px;
-        height: 100%;
+.nav-container .nav-item {
+    font-size: 20px;
+    height: 100%;
 
-        .nav-link {
-            font-family: $font-heading;
-            padding: 0 2rem;
-    
-            &:hover
-            , &:active {
-                color: $link-red;
-            }
+    .nav-link {
+        font-family: $font-heading;
+        padding: 0 2rem;
+
+        &:hover
+        , &:active {
+            color: $link-red;
         }
     }
 }
+
 
 .site-title {
     font-family: $font-heading;
@@ -256,30 +250,31 @@ header.nav nav {
 
 .offcanvas-navbar {
     background-color: rgb(247,250,255);
+}
 
-    .offcanvas-body {
-        line-height: 2.5;
-    }
+.offcanvas-navbar .offcanvas-body {
+    line-height: 2.5;
+}
 
-    .nav-item {
-        border-bottom: 1px solid #d8d8d8;//#9FA2B2;//#837b72;
-    }
+.offcanvas-navbar .nav-item {
+    border-bottom: 1px solid #d8d8d8;//#9FA2B2;//#837b72;
+}
+
+.offcanvas-navbar .nav-link {
+    color: #646464;
+
+}
+
+.offcanvas-navbar .nav-item .level-2 {
+    border-bottom: none;
+    line-height: 2;
 
     .nav-link {
-        color: #646464;
-
-    }
-
-    .nav-item .level-2 {
-        border-bottom: none;
-        line-height: 2;
-
-        .nav-link {
-            color: #646464;//#DEDEDE;
-            display: block;
-        }
+        color: #646464;//#DEDEDE;
+        display: block;
     }
 }
+
 
 .nav-dropdown {
     background-color: rgb(247,250,255); //#8DA7BE;//#49515A !important;
@@ -293,14 +288,6 @@ header.nav nav {
     width: 84%;
 }
 
-
-
-
-  
-//   .dropdown>.dropdown-toggle:active {
-//     /*Without this, clicking will make it sticky*/
-//       pointer-events: none;
-//   }
 
 .bi {
 vertical-align: -.125em;
