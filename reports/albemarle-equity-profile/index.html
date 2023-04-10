@@ -38,17 +38,76 @@
 
   
   <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  
+  
   <script src="https://rstudio.github.io/leaflet/libs/htmlwidgets/htmlwidgets.js"></script>
   
   
   
+
+  
+  <style>
+/* img {
+  max-width: 100%;
+  height: auto;
+}
+  .rmd-main {
+      margin-right: 250px;
+  }
+
+  #toc-title {
+    font-family: "Oswald";
+    font-size: 1.4em;
+    font-weight: 300;
+  }
+   
+  .main-container #TOC {
+    position: fixed;
+    top: 7.5rem; 
+    align-self: start;
+    right: 2rem;
+    max-width: 250px;
+  } */
+  
+  #TOC ul li.active > a {
+    color: #1E2952;
+  }
+  
+  #TOC {
+    padding-left: 0;
+    padding-top: 0;
+  }
+  
+  #TOC  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    /* border-left: 1.5px solid rgba(141,167,190, 0.5);  */
+  }
+  
+  #TOC li {
+    margin-left: 1rem;
+  }
+  
+  #TOC a {
+    text-decoration: none;
+    display: block;
+    padding: .125rem 0;
+    color: #0370B7;
+    transition: all 50ms ease-in-out; 
+  }
+  
+  #TOC a:hover,
+  #TOC a:focus {
+    color: #1E2952;
+  }
+  </style>
   
 
 </head>
 
   <body>
     <header>
-
     <nav id="topNav" class="navbar navbar-expand-md">
         <div class="nav-container container-lg">
             <a class="site-title navbar-brand" href="https://virginiaequitycenter.github.io/cville-equity-atlas" title="Charlottesville Regional Equity Atlas">
@@ -128,16 +187,13 @@
                 </ul>
                 
             </nav>
-    
         <!-- Offcanvas nav sidebar -->
             <div class="offcanvas offcanvas-end offcanvas-navbar" tabindex="-1" id="offcanvas-navbar" aria-labelledby="offcanvasNavbarDarkLabel">
                 <div class="offcanvas-header justify-content-end">
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-    
                     
-            
                     <ul class="nav flex-column mb-auto">
                         
                         
@@ -207,9 +263,6 @@
             </div>
         </div>
     </nav>
-        
-
-
 </header>
 
     <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">
@@ -234,60 +287,9 @@
 
 
   
-  <article class="report-content">
-    <div id="maincontent" class="main-container">
-      <!-- <style type="text/css">
-#TOC {
-margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-position: relative;
-width: 100%;
-}
-}
-@media print {
-.toc-content {
-
-float: right;
-}
-}
-.toc-content {
-padding-left: 30px;
-padding-right: 40px;
-}
-div.main-container {
-max-width: 1200px;
-}
-div.tocify {
-width: 20%;
-max-width: 260px;
-max-height: 85%;
-}
-@media (min-width: 768px) and (max-width: 991px) {
-div.tocify {
-width: 25%;
-}
-}
-@media (max-width: 767px) {
-div.tocify {
-width: 100%;
-max-width: none;
-}
-}
-.tocify ul, .tocify li {
-line-height: 20px;
-}
-.tocify-subheader .tocify-item {
-font-size: 0.90em;
-}
-.tocify .list-group-item {
-border-radius: 0px;
-}
-</style> -->
-
-
-<div class="rmd-main">
+<article class="report-content">
+  <div id="maincontent" class="main-container">
+    <div class="rmd-main">
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row flex-wrap-reverse">
@@ -720,10 +722,10 @@ $(document).ready(function ()  {
 </script>
 
 
-      </div>    
-  </article>
- 
-  <footer>
+    </div>    
+</article>
+
+<footer>
     <div class="footer-wrapper">
         <section class="footer-menu">
             <nav>
@@ -814,10 +816,6 @@ $(document).ready(function ()  {
 
 window.addEventListener('DOMContentLoaded', () => {
 
-  // var target = document.querySelector("#TOC > ul");
-  // target.querySelector("#TOC > ul > li").classList.add('active');
-
-
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     const id = entry.target.getAttribute('id');
@@ -874,8 +872,6 @@ document.querySelectorAll('div[id]').forEach((section) => {
     </script>
 
 
-<!-- <script src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/js/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<script src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/js/htmlwidgets-1.6.1/htmlwidgets.js"></script> -->
 <script src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/js/plotly-binding-4.10.1/plotly.js"></script>
 <script src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/js/typedarray-0.1/typedarray.min.js"></script>
 <link href="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/js/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
@@ -889,7 +885,6 @@ document.querySelectorAll('div[id]').forEach((section) => {
 <script src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/js/react-17.0.0/react.min.js"></script>
 <script src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/js/react-17.0.0/react-dom.min.js"></script>
 <script src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/js/reactwidget-1.0.0/react-tools.js"></script>
-<!-- <script src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/js/htmlwidgets-1.6.1/htmlwidgets.js"></script> -->
 <link href="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/js/reactable-0.4.4/reactable.css" rel="stylesheet" />
 <script src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/js/reactable-binding-0.4.4/reactable.js"></script>
 
