@@ -1,0 +1,45 @@
+<header class="headnav">
+    <div class="nav-wrap">
+        <nav id="mainmenu">
+            <div class="nav-main">
+                <a class="site-title" href="{{ site.url }}" title="{{ site.title }}">
+                    <span style="color:#3991D1">Charlottesville </span><span style="color:#052F5F">Equity Atlas</span>
+                </a>
+                {% if site.data.navbar[0] %}
+                <ul class="primary-nav">
+                    {% for item in site.data.navbar %}
+                    {% if item.level == 1 %}
+                    <li class="">
+                        <a class="" href="{{ item.url | prepend: site.url }}">
+                            {{ item.title }}
+                        </a>
+                    </li>
+                    {% endif %}
+    
+                    {% if item.level == 2 %}
+                    <li class="">
+                        <a class="" href="{{ item.url | prepend: site.url}}" role="button" aria-expanded="false">
+                            {{ item.title }}
+                        </a>
+                        
+                        <ul class="">
+                            {% for entry in item.subnav %}
+                            <li class="">
+                                <a class="" href="{{ entry.url | prepend: site.url}}">
+                                    {{ entry.page }}
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+                {% endif %}    
+            </div>
+
+        </nav>
+
+    </div>
+</header>

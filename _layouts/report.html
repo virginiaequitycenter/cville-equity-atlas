@@ -1,20 +1,61 @@
 ---
-layout: default
+layout: none
 ---
-
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+{% include head.html %}
+<body class="report">
+{% include navbar.html %}
+    <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">
+      <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"/></svg>     
+    </button>  -->
 {% unless page.url == "/" %}
 {% include breadcrumbs.html %}
 {% endunless %}
   
-  <article class="report-content">
-    <div id="maincontent" class="main-container">
-      {{ content}}
-      </div>    
-  </article>
- 
-  {% include footer.html %}
+<article class="report-content">
+  <div id="maincontent" class="main-container">
+    {{ content}}
+    </div>    
+</article>
 
+{% include footer.html %}
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous" async></script>
+<script>
+  // let mybutton = document.getElementById("myBtn");
+  let topnav = document.getElementById("topNav")
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+      // mybutton.style.display = "block";
+      topnav.classList.add('hidden');
+      // topnav.style.marginTop = ""
+    } else {
+      // mybutton.style.display = "none";
+      topnav.classList.remove('hidden')
+    }
+  }
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+
+{% if page.plotly %}
+{% include plotly.html %}
+{% endif %}
+
+{% if page.reactable %}
+{% include reactable.html %}
+{% endif %}
+
+{% if page.leaflet %}
+{% include leaflet.html %}
+{% endif %}
+
+{% if page.tabset %}
 <script>
   $(document).ready(function () {
     window.buildTabsets("TOC");
@@ -26,45 +67,12 @@ layout: default
     });
   });
 </script>
-
-<script>
-  $(document).ready(function ()  {
-  
-    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
-    $('.unlisted.unnumbered').addClass('toc-ignore')
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    document.querySelector(`body`).classList.add('report');
-      
-  });
-</script>
+{% endif %}
 
 {% if page.toc-float %}
 <script>
 
 window.addEventListener('DOMContentLoaded', () => {
-
-  // var target = document.querySelector("#TOC > ul");
-  // target.querySelector("#TOC > ul > li").classList.add('active');
-
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -85,7 +93,8 @@ document.querySelectorAll('div[id]').forEach((section) => {
 });
 
 });
-
 </script>
 {% endif %}
 
+</body>
+</html>

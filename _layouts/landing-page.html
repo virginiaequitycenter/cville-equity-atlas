@@ -3,14 +3,14 @@ layout: default
 ---
 <article class="landing-page">
     <header>
-        <div class="header-image" style="background-image: url({{ page.header-image }});" height="500px" width="100%">
-            <div class="header-overlay" height="250px" width="100%"></div>
+        <div class="header-image" style="background-image: url({{ page.header-image }});" height="500" width="100%">
+            <div class="header-overlay" height="250" width="100%"></div>
             <div class="header-content">
                 <h1>
                     {{ page.title }}
                 </h1>
             </div>
-            </div>
+        </div>
     </header>
 
     {% unless page.url == "/" %}
@@ -18,7 +18,7 @@ layout: default
     {% endunless %}
     
     <div id="maincontent" class="main-container">
-    {{ content}}
+        {{ content}}
     </div>    
 </article>
 
