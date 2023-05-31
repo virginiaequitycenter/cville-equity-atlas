@@ -43,7 +43,7 @@ article.landing-page header div.header-content,
 div.home-page header div.hero-container,  
 article.report-content,
 .breadcrumbs {
-  max-width: 90vw;
+  max-width: 86vw;
   margin: auto;
 }
 
@@ -66,7 +66,7 @@ article, aside, footer, header, nav, section, div.home-page {
 
 img {
   max-width: 100%;
-  height: auto;
+  // height: auto;
 }
 
 h1,
@@ -239,6 +239,10 @@ div.hero-container {
   padding: 1.5rem 1.5rem;
 }
 
+a.report-link {
+  font-family: $font-heading;
+}
+
 .flex-item-two {
   // @include flex(0 0 auto);
   flex: 0 0 auto;
@@ -328,6 +332,17 @@ a div.hero-container div.flex-item-two p {
 .content-box .content-text h3,
 .content-box .content-text p {
   color: #fff;
+}
+
+.content-box .content-text h3 {
+  margin-top: 0;
+  font-size: 1.4em;
+}
+
+.content-box .content-text p {
+  font-weight: 300;
+  line-height: 1.2;
+  font-size: .9em;
 }
 
 .content-box .partner-logos {
@@ -480,7 +495,36 @@ article.landing-page .breadcrumb-container {
 
 // RMD Reports
 
+.rmd-main {
+  max-width: 990px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.logo-span {
+  @include flexbox();
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  @include justify-content(flex-start);
+  @include align-items(center);
+  margin: 1.5rem 0;
+}
+
+.logo-span img {
+  margin: 10px 20px;
+  max-height: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .logo-span {
+    @include justify-content(space-evenly);
+    margin: 0;
+  }
+  .logo-span img {
+    margin: 8px 0;
+    max-height: 70px;
+  }
+}
 // #TOC {
 //   padding-top: .67em;
 // }
@@ -581,9 +625,7 @@ blockquote {
 }
 
 // html tools
-.rmd-main {
-  overflow-x: scroll;
-}
+
 .html-widget {
   margin-bottom: 20px;
 }
