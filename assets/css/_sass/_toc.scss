@@ -1,0 +1,192 @@
+#TOC {
+    margin: 25px 0px 20px 0px;
+}
+
+@media (max-width: 767px) {
+    #TOC {
+        display: none;}
+}
+
+// @media (max-width: 767px) {
+//     #TOC {
+//         position: relative;
+//         width: 100%;
+//     }
+// }
+
+#TOC li {
+    margin-bottom: .2em;
+}
+
+.toc-mobile {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .toc-mobile {
+        display: block;
+        margin-bottom: 2rem;
+    }
+}
+
+.toc-mobile ul, .toc-mobile li, .toc-mobile a {
+    padding-left: 0;
+    list-style: none;
+    line-height: 18px;
+}
+
+.toc-mobile li {
+    position: relative;
+    margin-bottom: .2em;
+    padding: 5px;
+    border-radius: 0px;
+}
+
+.toc-mobile li ul {
+    padding-left: 2rem;
+}
+
+.toc-mobile li ul li {
+    margin-bottom: 0;
+    list-style: circle;
+}
+
+.toc-mobile a {
+    color: #212529 !important;
+}
+
+#toc-title {
+    margin-top: 0;
+    font-size: calc(1.3rem + .6vw); //matches _reboot.scss h3 font-size
+    margin-bottom: .4em;
+}
+@media print {
+    .toc-content {
+        float: right;
+    }
+}
+
+@media (min-width: 768px) {
+    .toc-content {
+        padding-right: 30px;
+    }    
+}
+
+div.tocify {
+    width: 16.66666667%;
+    max-width: 260px;
+    max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    div.tocify {
+        width: 20%;
+    }
+}
+
+@media (max-width: 767px) {
+    div.tocify {
+        width: 100%;
+        max-width: none;
+        max-height: 95%;
+    }
+}
+
+.tocify ul, .tocify li {
+    line-height: 18px;
+}
+
+.tocify-subheader .tocify-item {
+    font-size: 0.90em;
+    line-height: 16px;
+}
+
+.tocify .list-group-item {
+    border-radius: 0px;
+}
+
+/*
+ * Adapted from:
+ * jquery.tocify.css 1.9.1
+ * Author: @gregfranko
+ */
+
+/* The Table of Contents container element */
+.tocify {
+    width: 25%;
+    max-height: 90%;
+    overflow: auto;
+    margin-left: 2%;
+    position: fixed;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 6px; */
+}
+
+/* The Table of Contents is composed of multiple nested unordered lists.  These styles remove the default styling of an unordered list because it is ugly. */
+.tocify ul, .tocify li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    // line-height: 30px;
+}
+
+/* Top level header elements */
+/* .tocify-header {
+    text-indent: 10px;
+} */
+
+/* Top level subheader elements.  These are the first nested items underneath a header element. */
+.tocify-subheader {
+    /* text-indent: 20px; */
+    margin-left: .5rem !important;
+    display: none;
+}
+
+/* Makes the font smaller for all subheader elements. */
+.tocify-subheader li {
+    font-size: 12px;
+}
+
+/* Further indents second level subheader elements. */
+.tocify-subheader .tocify-subheader {
+    text-indent: 30px;
+}
+.tocify-subheader .tocify-subheader .tocify-subheader {
+    text-indent: 40px;
+}
+.tocify-subheader .tocify-subheader .tocify-subheader .tocify-subheader {
+    text-indent: 50px;
+}
+.tocify-subheader .tocify-subheader .tocify-subheader .tocify-subheader .tocify-subheader {
+    text-indent: 60px;
+}
+
+/* Twitter Bootstrap Override Style */
+.tocify .tocify-item > a, .tocify .nav-list .nav-header {
+    margin: 0px;
+}
+
+/* Twitter Bootstrap Override Styles */
+.tocify .tocify-item a, .tocify .list-group-item {
+    padding: 5px;
+}
+
+.tocify .nav-pills > li {
+    float: none;
+}
+
+/* We don't override the bootstrap colors because this gives us the
+   wrong selection colors when using bootstrap themes 
+
+.tocify .list-group-item:hover, .tocify .list-group-item:focus {
+    background-color: #f5f5f5;
+}
+
+
+.tocify .list-group-item.active:hover, .tocify .list-group-item.active:focus {
+    background-color: #428bca;
+}
+*/
+
+ /* End Twitter Bootstrap Override Styles */

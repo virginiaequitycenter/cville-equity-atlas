@@ -1,0 +1,116 @@
+#carousel {
+  display: block;
+  position: relative;
+  // top: -65px;
+}
+
+#carousel, #carousel .post-update, #carousel .post-update header {
+    height: 680px;
+    width: 100%;
+  }
+
+
+
+  #carousel .post-update.active {
+    opacity: 100;
+  }
+
+  #carousel .post-update {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: opacity 1s ease;
+    opacity: 0;
+  }
+
+  #carousel .post-update header {
+    background-image: url("https://cdh.princeton.edu/static/img/post-default-background.jpg?80417336d7b2");
+    background-color: rgba(0,0,0,0.2);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+
+    height: 680px;
+  position: relative;
+  overflow: hidden;
+  }
+
+  #carousel .post-update .header-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5,47,95,0.2);
+    opacity: 20;
+  }
+
+
+  #carousel a {
+    text-decoration: none;
+  }
+
+  #carousel .post-update .post-update-text {
+    position: relative;
+    // z-index: 4;
+    margin: auto;
+    // top: -392px;
+    width: 990px;
+    height: 320px;
+    background-color: #fff;
+    padding: 45px 86px;
+
+  top: -460px;
+  }
+
+  #carousel .post-update .post-update-text .quote {
+    display: none;
+    position: absolute;
+    color: #00eeff;
+    font-size: 8em;
+    font-family: "BrownStdBold",bold arial,sans-serif;
+    font-style: italic;
+    transform: rotate(180deg);
+    margin: -275px -125px;
+    z-index: 5;
+  }
+
+  #carousel .post-update .post-update-text .heading, #carousel .post-update .post-update-text .description {
+    // font-size: 0.75em;
+    color: #646464;
+    font-family: "BrownStdRegular",arial,sans-serif;
+    line-height: normal;
+  }
+  #carousel .post-update .post-update-text .heading {
+    margin: 5px 0;
+  }
+
+  #carousel .post-update .post-update-text .line {
+    width: 30px;
+    height: 4px;
+    background-color: #00eeff;
+    margin: 20px 0;
+  }
+
+  #carousel .post-update .post-update-text .title {
+    font-size: 2em;
+    color: #000000;
+    margin-bottom: 20px;
+  }
+
+  #carousel #post-controls {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 650px;
+  }
+
+  #carousel #post-controls a {
+    cursor: pointer;
+    padding: 0 8px;
+  }
+
+  #carousel #post-controls .dot {
+    margin: auto;
+    background-color: #646464;
+    border-radius: 100%;
+    width: 10px;
+    height: 10px;
+  }

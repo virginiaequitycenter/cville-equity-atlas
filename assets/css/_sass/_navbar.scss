@@ -80,9 +80,9 @@
 //     padding: 18px 0 17px;
 //   }
 
-header nav.hidden {
-margin-top: -90px;
-}
+// header nav.hidden {
+// margin-top: -90px;
+// }
 
 header nav {
 transition: margin-top 0.25s;
@@ -113,6 +113,7 @@ transition: margin-top 0.25s;
 .nav-container {
     height: 65px;
     line-height: 65px;
+    padding: 0 1.5rem;
 }
 
 .nav-container .navbar-nav {
@@ -133,7 +134,6 @@ transition: margin-top 0.25s;
         }
     }
 }
-
 
 .site-title {
     font-family: $font-heading;
@@ -157,6 +157,7 @@ transition: margin-top 0.25s;
         height: 50px;
         line-height: 50px;
     }
+    
 }
 
 .navbar-toggler {
