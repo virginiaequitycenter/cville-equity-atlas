@@ -2,19 +2,36 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q05T97F4LC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Q05T97F4LC');
+  </script>
+
   {% capture fulltitle %}{% if page.title %}{{ page.title | escape | append: " | Cville Equity Atlas" }}{% else %}{{ site.title | escape }}{% endif %}{% endcapture %}
   <title>{% if page.url == "/" %}{{ site.title }}{% else %}{{ fulltitle }} {% endif %}</title>
-  
-  {% assign description = page.excerpt | default: site.description | strip_html | normalize_whitespace | escape %}
-  <meta name="description" content="{{ description }}">
-  
+
   <!-- Open Graph http://ogp.me/ -->
   <meta property="og:title" content="{{ page.title }}">
-  <meta property="og:description" content="{{ description }}">
   <meta property="og:site_name" content="{{ site.title }}">
-  <meta property="og:type" content="{{ page.og_type }}">
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}">
-  {% if page.image %}<meta property="og:image" content="{{ page.image }}">{% endif %}
+  {% if page.image %}
+  <meta property="og:image" content="{{ page.image }}">
+  <meta property="og:image:type" content="image/jpg">
+  {% if page.imagewidth %}
+  <meta property="og:image:width" content="{{ page.imagewidth }}">
+  {% endif %}
+  {% if page.imageheight %}
+  <meta property="og:image:height" content="{{ page.imageheight }}">
+  {% endif %}
+  {% endif %}
+
+  <meta property="og:type" content="{{ page.og_type }}">
+  <meta property="og:description" content="{{ description }}">
 
   {% if page.author.size > 0 %}
   {% for author in page.author %}
@@ -26,6 +43,9 @@
     {% endif %}
   {% endfor %}
   {% endif %}
+
+  {% assign description = page.excerpt | default: site.description | strip_html | normalize_whitespace | escape %}
+  <meta name="description" content="{{ description }}">
 
   <!-- Twitter Cards https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary -->
   <meta name="twitter:card" content="summary">
