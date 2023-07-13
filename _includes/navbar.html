@@ -1,24 +1,21 @@
 <header class="nav">
     <div class="nav-wrap">
-    <nav id="topNav" class="navbar navbar-expand-md">
+    <nav id="topNav" class="navbar navbar-expand-md" role="navigation" aria-label="main navigation">
         <!-- <div class="nav-container"> -->
         <div class="nav-main">
             <a class="home-page" href="{{ site.url }}" title="{{ site.title }}">
             <!-- <a class="site-title navbar-brand" href="{{ site.url }}" title="{{ site.title }}"> -->
                 <span style="color:#3991D1">Charlottesville&nbsp</span><span style="color:#052F5F">Equity Atlas</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="offcanvasNavbarDarkLabel">
-            <span class="navbar-toggler-icon"></span>
-            </button>
             <!-- Menu expanded -->
             
             <!-- <nav id="nav-expanded"> -->
                 {% if site.data.navbar[0] %}
-                <ul class="primary-nav" role="menubar" aria-label="main navigation">
+                <ul class="primary-nav">
                 <!-- <ul class="navbar-nav justify-content-end flex-grow-1"> -->
                     {% for item in site.data.navbar %}
                     {% if item.level == 1 %}
-                    <li role="none">
+                    <li>
                     <!-- <li class="nav-item"> -->
                         <a class="nav-link" href="{{ item.url | prepend: site.url }}">
                             {{ item.title }}
@@ -49,7 +46,12 @@
                 {% endif %}
             <!-- </nav> -->
         <!-- Offcanvas nav sidebar -->
-            <div class="offcanvas offcanvas-end offcanvas-navbar" tabindex="-1" id="offcanvas-navbar" aria-labelledby="offcanvasNavbarDarkLabel">
+        <a class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="block-mobilemainnav-menu" aria-label="open menu">
+            <span class="navbar-toggler-icon" aria-hidden="true" role="img"></span>
+        </a>
+
+            <div class="offcanvas offcanvas-end offcanvas-navbar" tabindex="-1" id="offcanvas-navbar" aria-labelledby="block-mobilemainnav-menu">
+                <h2 class="visually-hidden" id="block-mobilemainnav-menu">Mobile Main Nav</h2>
                 <div class="offcanvas-header justify-content-end">
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>

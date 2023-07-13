@@ -50,7 +50,14 @@ body.report {
   padding-right: 0;
 }
 
-
+.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  word-wrap: normal;
+}
 
 // @media screen and (max-width: 1260px) {
 //   .container-lg,
@@ -225,11 +232,13 @@ div.home-page header div.header-image {
 // // top: -460px;
 // }
 
-.post-update-text .heading {
+.post-update-text .heading,
+.project-card .heading {
   margin: 5px 0;
 }
 
-.post-update-text .line {
+.post-update-text .line,
+.project-card .line {
   width: 30px;
   height: 4px;
   background-color: $primary-blue; // #00eeff;
@@ -252,17 +261,17 @@ div.home-page header div.header-image {
   line-height: normal;
 }
 
-.post-update-text a.post-link{
+.post-update-text .post-link{
   color: #646464 !important;
   font-size: 16px;
 }
 
-.post-update-text a.post-link svg {
+.post-update-text .post-link svg {
   fill: #646464;
   margin-left: 12px;
 }
 
-a.post-link {
+.post-link {
   display: inline-block;
   color: $dark-blue !important; //$body-text
   font-size: 18px;//16px;
@@ -273,7 +282,7 @@ a.post-link {
   font-weight: 500;
 }
 
-a.post-link svg {
+.post-link svg {
   fill: $dark-blue;
   margin-left: 12px;
 }
@@ -371,6 +380,38 @@ article.landing-page header div.header-content {
   // padding-right: calc(1.5rem * .5);
   // padding-left: calc(1.5rem * .5);
   margin-top: 1.5rem;
+}
+
+.grid-container {
+  display: grid;
+grid-column-gap: 30px;
+    grid-template-columns: [start] repeat(12,1fr) [end];
+    margin: auto;
+}
+
+.grid-container .project-card {
+  grid-column-end: span 4;
+max-width: none;
+margin-top: 30px;
+position: relative;
+margin-bottom: 50px;
+// height: 233px;
+} 
+.grid-container .project-card a {
+background-color: white;
+  // border: solid 2px #d8d8d8;
+  // width: 100%;
+  // height: 100%;
+  display: flex;
+  flex-direction: column;
+  // justify-content: flex-end;
+  // align-items: flex-end;
+}
+
+.grid-container .project-card a .card-header,
+.grid-container .project-card a .card-content {
+  padding: 15px;
+
 }
 
 div.hero-container {
