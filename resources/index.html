@@ -59,25 +59,22 @@
   <body>
     <header class="nav">
     <div class="nav-wrap">
-    <nav id="topNav" class="navbar navbar-expand-md">
+    <nav id="topNav" class="navbar navbar-expand-md" role="navigation" aria-label="main navigation">
         <!-- <div class="nav-container"> -->
         <div class="nav-main">
             <a class="home-page" href="https://virginiaequitycenter.github.io/cville-equity-atlas" title="Charlottesville Regional Equity Atlas">
             <!-- <a class="site-title navbar-brand" href="https://virginiaequitycenter.github.io/cville-equity-atlas" title="Charlottesville Regional Equity Atlas"> -->
                 <span style="color:#3991D1">Charlottesville&nbsp</span><span style="color:#052F5F">Equity Atlas</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="offcanvasNavbarDarkLabel">
-            <span class="navbar-toggler-icon"></span>
-            </button>
             <!-- Menu expanded -->
             
             <!-- <nav id="nav-expanded"> -->
                 
-                <ul class="primary-nav" role="menubar" aria-label="main navigation">
+                <ul class="primary-nav">
                 <!-- <ul class="navbar-nav justify-content-end flex-grow-1"> -->
                     
                     
-                    <li role="none">
+                    <li>
                     <!-- <li class="nav-item"> -->
                         <a class="nav-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas/cville-equity-dashboard/">
                             Dashboard
@@ -121,7 +118,7 @@
                     
                     
                     
-                    <li role="none">
+                    <li>
                     <!-- <li class="nav-item"> -->
                         <a class="nav-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas/resources/">
                             Resources
@@ -132,7 +129,7 @@
                     
                     
                     
-                    <li role="none">
+                    <li>
                     <!-- <li class="nav-item"> -->
                         <a class="nav-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas/about/">
                             About
@@ -146,7 +143,12 @@
                 
             <!-- </nav> -->
         <!-- Offcanvas nav sidebar -->
-            <div class="offcanvas offcanvas-end offcanvas-navbar" tabindex="-1" id="offcanvas-navbar" aria-labelledby="offcanvasNavbarDarkLabel">
+        <a class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="block-mobilemainnav-menu" aria-label="open menu">
+            <span class="navbar-toggler-icon" aria-hidden="true" role="img"></span>
+        </a>
+
+            <div class="offcanvas offcanvas-end offcanvas-navbar" tabindex="-1" id="offcanvas-navbar" aria-labelledby="block-mobilemainnav-menu">
+                <h2 class="visually-hidden" id="block-mobilemainnav-menu">Mobile Main Nav</h2>
                 <div class="offcanvas-header justify-content-end">
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
@@ -264,6 +266,38 @@
     <h2 class="title" style="font-family: 'Poppins', Arial, sans-serif; font-size: 1.5em;">Updates coming soon!</h2>
     <!-- <div class="line"></div> -->
 </div>  
+
+<!-- <div class="grid-container">
+    <div class="project-card">
+        <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/orange-dot/">
+            <div class="card-header">
+                <div class="heading">Dashboard</div>
+                <div class="line"></div>
+            </div>
+            <img src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/img/sol-detail.png"/>
+            <div class="card-content">
+                <h3>Orange Dot Report</h3>
+                <p>Economic Indicators Directly Impacting Families Across the Greater Charlottesville Region</p>    
+            </div>
+        </a>
+    </div>
+    <div class="project-card">
+        <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/orange-dot/">
+            <h3>Orange Dot Report</h3>
+
+            <p>Economic Indicators Directly Impacting Families Across the Greater Charlottesville Region</p>
+        </a>
+    </div>
+    <div class="project-card">
+        <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/orange-dot/">
+            <h3>Orange Dot Report</h3>
+
+            <p>Economic Indicators Directly Impacting Families Across the Greater Charlottesville Region</p>
+        </a>
+    </div>
+
+</div> -->
+
     </div>    
 </article>
 
