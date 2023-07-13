@@ -66,22 +66,28 @@
 </head>
 
   <body>
-    <header>
+    <header class="nav">
+    <div class="nav-wrap">
     <nav id="topNav" class="navbar navbar-expand-md">
-        <div class="nav-container container-fluid">
-            <a class="site-title navbar-brand" href="https://virginiaequitycenter.github.io/cville-equity-atlas" title="Charlottesville Regional Equity Atlas">
-                <span style="color:#3991D1">Charlottesville </span><span style="color:#052F5F">Equity Atlas</span>
+        <!-- <div class="nav-container"> -->
+        <div class="nav-main">
+            <a class="home-page" href="https://virginiaequitycenter.github.io/cville-equity-atlas" title="Charlottesville Regional Equity Atlas">
+            <!-- <a class="site-title navbar-brand" href="https://virginiaequitycenter.github.io/cville-equity-atlas" title="Charlottesville Regional Equity Atlas"> -->
+                <span style="color:#3991D1">Charlottesville&nbsp</span><span style="color:#052F5F">Equity Atlas</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="offcanvasNavbarDarkLabel">
             <span class="navbar-toggler-icon"></span>
             </button>
             <!-- Menu expanded -->
-            <nav id="nav-expanded">
+            
+            <!-- <nav id="nav-expanded"> -->
                 
-                <ul class="navbar-nav justify-content-end flex-grow-1">
+                <ul class="primary-nav" role="menubar" aria-label="main navigation">
+                <!-- <ul class="navbar-nav justify-content-end flex-grow-1"> -->
                     
                     
-                    <li class="nav-item">
+                    <li role="none">
+                    <!-- <li class="nav-item"> -->
                         <a class="nav-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas/cville-equity-dashboard/">
                             Dashboard
                         </a>
@@ -93,7 +99,7 @@
                     
     
                     
-                    <li class="nav-item dropdown">
+                    <li class="dropdown">
                         <a class="nav-link dropdown-toggle" href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/" role="button" aria-expanded="false">
                             Reports
                         </a>
@@ -124,7 +130,8 @@
                     
                     
                     
-                    <li class="nav-item">
+                    <li role="none">
+                    <!-- <li class="nav-item"> -->
                         <a class="nav-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas/resources/">
                             Resources
                         </a>
@@ -134,7 +141,8 @@
                     
                     
                     
-                    <li class="nav-item">
+                    <li role="none">
+                    <!-- <li class="nav-item"> -->
                         <a class="nav-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas/about/">
                             About
                         </a>
@@ -145,13 +153,20 @@
                     
                 </ul>
                 
-            </nav>
+            <!-- </nav> -->
         <!-- Offcanvas nav sidebar -->
             <div class="offcanvas offcanvas-end offcanvas-navbar" tabindex="-1" id="offcanvas-navbar" aria-labelledby="offcanvasNavbarDarkLabel">
                 <div class="offcanvas-header justify-content-end">
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
+                    <ul class="nav flex-column mb-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas" title="Charlottesville Regional Equity Atlas">
+                                Equity Atlas Home
+                            </a>
+                        </li>
+                    </ul>
                     
                     <ul class="nav flex-column mb-auto">
                         
@@ -222,54 +237,10 @@
             </div>
         </div>
     </nav>
+</div>
 </header>
 
     <div class="home-page">
-
- <!--  <div id="carousel">
-    <div class="post-update active">
-        <header style="background-image: url('https://virginiaequitycenter.github.io/cville-equity-atlas/assets/img/detail.png')">
-            <div class="header-overlay"></div>
-        </header>
-        <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/cville-equity-dashboard/">
-        <div class="post-update-text">
-                <div class="quote">"</div>
-                <div class="heading">Dashboard</div>
-                <div class="line"></div>
-                <h1 class="title">Charlottesville Region Equity Dashboard</h1>
-                <p class="description">A data and policy tool for leaders and advocates to advance a more equitable community and help citizens hold decision-makers accountable. We seek to pull together data commonly sought by partners and advocates advancing equity and justice.</p>
-            </div>
-        </a>
-    </div>
-    <div class="post-update">
-        <header style="background-image: url('https://cdh.princeton.edu/static/img/post-default-background.jpg?80417336d7b2')">
-            <div class="header-overlay"></div>
-        </header>
-        <a href="/updates/2023/06/01/digital-humanities-and-princeton-research-day-projects-2023/">
-        <div class="post-update-text">
-                <div class="quote">"</div>
-                <div class="heading">Updates</div>
-                <div class="line"></div>
-                <h1 class="title">Digital Humanities and Princeton Research Day Projects 2023</h1>
-                <p class="description">Princeton students use digital humanities tools to visualize, analyze, and answer their research questions.</p>
-            </div>
-        </a>
-    </div>
-    
-    <div id="post-controls">
-        
-            <a href="javascript:void(0);" title="Show slide Meet the Spring 2023 CDH Grad Fellows">
-                <div class="dot" data-index="0"></div>
-            </a>
-        
-            <a href="javascript:void(0);" title="Show slide Digital Humanities and Princeton Research Day Projects 2023">
-                <div class="dot active" data-index="1"></div>
-            </a>
-        
-    </div>
-    
-</div> -->
-
     <header>
         <div class="header-image" style="background-image: url(https://virginiaequitycenter.github.io/cville-equity-atlas/assets/img/detail.png);" height="500" width="100%">
         </div>
@@ -279,23 +250,17 @@
             <div class="post-update-text">
               <div class="heading">Dashboard</div>
               <div class="line"></div>
-              <h1 class="title">Regional Equity Dashboard</h1>
+              
+              <h1 class="title">
+                <span>Regional Equity Dashboard</span>
+              </h1>
               <p class="description">A data and policy tool for leaders and advocates to advance a more equitable community and help citizens hold decision-makers accountable. We seek to pull together data commonly sought by partners and advocates advancing equity and justice.</p>
-          </div>               
-  
+              <a class="post-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas/cville-equity-dashboard/">
+                <span>Go to Equity Dashboard</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+              </a>
+            </div>               
           </a>
-            <!-- <div class="flex-item-two">
-                <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/cville-equity-dashboard/">
-                    <h2 class="">Charlottesville Region Equity Dashboard</h2>
-                </a>
-                <p class="">A data and policy tool for leaders and advocates to advance a more equitable community and help citizens hold decision-makers accountable. We seek to pull together data commonly sought by partners and advocates advancing equity and justice.</p>
-            </div> -->
-            <!-- <div class="flex-item-two">
-                <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/cville-equity-dashboard/">
-                    <img src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/img/equity-dashboard-screen.png" class="" alt="Charlottesville Region Map View" width="700" height="500" loading="lazy">
-                </a>
-            </div> -->
-
         </div>
 
     </header>
@@ -341,12 +306,20 @@
           </div>
         
         </div>
-        <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/" class="report-link">See all Regional Equity Reports >></a>
+        
+        <a class="post-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/">
+          <span>See all Regional Equity Reports</span>
+          <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+        </a>
 
         <h2 style="margin-top:3rem;">Who We Are</h2>
         <hr>
         <p style="margin-top:1.5rem;padding-bottom:1.5rem;">We're the Democratization of Data team at the UVA Equity Center.</p>
-        <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/about/" class="report-link">Read more about us >></a>
+
+        <a class="post-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas/about/">
+          <span>Read more about us</span>
+          <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+        </a>
 
     </div>    
 </div>

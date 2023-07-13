@@ -75,22 +75,28 @@
 </head>
 <body class="report">
 
-  <header>
+  <header class="nav">
+    <div class="nav-wrap">
     <nav id="topNav" class="navbar navbar-expand-md">
-        <div class="nav-container container-fluid">
-            <a class="site-title navbar-brand" href="https://virginiaequitycenter.github.io/cville-equity-atlas" title="Charlottesville Regional Equity Atlas">
-                <span style="color:#3991D1">Charlottesville </span><span style="color:#052F5F">Equity Atlas</span>
+        <!-- <div class="nav-container"> -->
+        <div class="nav-main">
+            <a class="home-page" href="https://virginiaequitycenter.github.io/cville-equity-atlas" title="Charlottesville Regional Equity Atlas">
+            <!-- <a class="site-title navbar-brand" href="https://virginiaequitycenter.github.io/cville-equity-atlas" title="Charlottesville Regional Equity Atlas"> -->
+                <span style="color:#3991D1">Charlottesville&nbsp</span><span style="color:#052F5F">Equity Atlas</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="offcanvasNavbarDarkLabel">
             <span class="navbar-toggler-icon"></span>
             </button>
             <!-- Menu expanded -->
-            <nav id="nav-expanded">
+            
+            <!-- <nav id="nav-expanded"> -->
                 
-                <ul class="navbar-nav justify-content-end flex-grow-1">
+                <ul class="primary-nav" role="menubar" aria-label="main navigation">
+                <!-- <ul class="navbar-nav justify-content-end flex-grow-1"> -->
                     
                     
-                    <li class="nav-item">
+                    <li role="none">
+                    <!-- <li class="nav-item"> -->
                         <a class="nav-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas/cville-equity-dashboard/">
                             Dashboard
                         </a>
@@ -102,7 +108,7 @@
                     
     
                     
-                    <li class="nav-item dropdown">
+                    <li class="dropdown">
                         <a class="nav-link dropdown-toggle" href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/" role="button" aria-expanded="false">
                             Reports
                         </a>
@@ -133,7 +139,8 @@
                     
                     
                     
-                    <li class="nav-item">
+                    <li role="none">
+                    <!-- <li class="nav-item"> -->
                         <a class="nav-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas/resources/">
                             Resources
                         </a>
@@ -143,7 +150,8 @@
                     
                     
                     
-                    <li class="nav-item">
+                    <li role="none">
+                    <!-- <li class="nav-item"> -->
                         <a class="nav-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas/about/">
                             About
                         </a>
@@ -154,13 +162,20 @@
                     
                 </ul>
                 
-            </nav>
+            <!-- </nav> -->
         <!-- Offcanvas nav sidebar -->
             <div class="offcanvas offcanvas-end offcanvas-navbar" tabindex="-1" id="offcanvas-navbar" aria-labelledby="offcanvasNavbarDarkLabel">
                 <div class="offcanvas-header justify-content-end">
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
+                    <ul class="nav flex-column mb-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas" title="Charlottesville Regional Equity Atlas">
+                                Equity Atlas Home
+                            </a>
+                        </li>
+                    </ul>
                     
                     <ul class="nav flex-column mb-auto">
                         
@@ -231,6 +246,7 @@
             </div>
         </div>
     </nav>
+</div>
 </header>
 
 
