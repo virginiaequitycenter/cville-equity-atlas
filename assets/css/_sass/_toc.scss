@@ -189,4 +189,9 @@ div.tocify {
 }
 */
 
+.tocify .list-group-item.active {
+    background-color: $brand-blue-light;
+    border-color: $brand-blue-light;
+  }
+
  /* End Twitter Bootstrap Override Styles */

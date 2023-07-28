@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Charlottesville Equity Atlas
+title: Charlottesville Regional Equity Atlas
 image: https://raw.githubusercontent.com/virginiaequitycenter/cville-equity-atlas/main/assets/img/atlas-image-card.webp
 imagewidth: 800
 imageheight: 600
@@ -35,53 +35,60 @@ imageheight: 600
     
     <div id="maincontent" class="main-container">
         <h2>Regional Equity Highlights</h2>
-        <hr>
-        <div class="flex-container">
-          <div class="flex-item">
+
+        <div class="grid-container">
+          <div class="project-card featured">
             <a href="{{ "/reports/stepping-stones/" | prepend: site.url }}">
-              <div class="content-box">
-                <div class="content-text">
-                  <h3>Stepping Stones</h3>
-                  <p>Report on Community Well-Being of Children and Families in Charlottesville and Albemarle</p>
-                </div>
-                <div class="partner-logos" style="background-image: url({{ "/assets/img/sol-detail.png" | prepend: site.url }});"></div>
+              <div class="card-image">
+                      <img src="{{ "/assets/img/sol-detail.png" | prepend: site.url }}"/>
               </div>
-              </a>
+              <div class="card-header">
+                  Report | June 2023
+              </div>
+              <div class="card-content">
+                      <h3>Stepping Stones</h3>
+                  <p>Report on Community Well-Being of Children and Families in Charlottesville and Albemarle</p>    
+              </div>
+            </a>
           </div>
-        
-          <div class="flex-item">
+          <div class="project-card featured">
             <a href="{{ "/reports/orange-dot/" | prepend: site.url }}">
-            <div class="content-box">
-              <div class="content-text">
-                <h3>Orange Dot Report</h3>
-                <p>Economic Indicators Directly Impacting Families Across the Greater Charlottesville Region</p>
+              <div class="card-image">
+                  <img src="{{ "/assets/img/living-wage-detail.png" | prepend: site.url }}"/>
               </div>
-              <div class="partner-logos" style="background-image: url({{ "/assets/img/living-wage-detail.png" | prepend: site.url }});"></div>
-            </div>
-          </a>
+              <div class="card-header">
+                  Report | October 2022
+              </div>
+              <div class="card-content">
+                      <h3>Orange Dot Report</h3>
+                  <p>Economic Indicators Directly Impacting Families Across the Greater Charlottesville Region</p>    
+              </div>
+            </a>
           </div>
-        
-          <div class="flex-item">
+          <div class="project-card featured">
             <a href="{{ "/reports/albemarle-equity-profile/" | prepend: site.url }}">
-            <div class="content-box">
-              <div class="content-text">
-                <h3>Albemarle County Equity Profile</h3>
-                <p>Centering Equity in Evaluating Well-Being & Quality of Life for Albemarle County Residents</p>
+              <div class="card-image">
+                  <img src="{{ "/assets/img/alb-equity-detail.png" | prepend: site.url }}"/>
               </div>
-              <div class="partner-logos" style="background-image: url({{ "/assets/img/alb-equity-detail.png" | prepend: site.url }});"></div>
-            </div>
+              <div class="card-header">
+                  Report | May 2021
+              </div>
+              <div class="card-content">
+                  <h3>Albemarle County Equity Profile</h3>
+                  <p>Centering Equity in Evaluating Well-Being & Quality of Life for Albemarle County Residents</p>    
+              </div>
             </a>
           </div>
         
         </div>
         
         <a class="post-link" href="{{ "/reports/" | prepend: site.url }}">
-          <span>See all Regional Equity Reports</span>
+          <span>See all Reports</span>
           <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
         </a>
 
         <h2 style="margin-top:3rem;">Who We Are</h2>
-        <hr>
+        <!-- <hr> -->
         <p style="margin-top:1.5rem;padding-bottom:1.5rem;">We're the Democratization of Data team at the UVA Equity Center.</p>
 
         <a class="post-link" href="{{ "/about/" | prepend: site.url }}">

@@ -241,7 +241,7 @@ div.home-page header div.header-image {
 .project-card .line {
   width: 30px;
   height: 4px;
-  background-color: $primary-blue; // #00eeff;
+  background-color: $link-red;//$primary-blue; // #00eeff;
   margin: 20px 0;
 }
 
@@ -261,16 +261,31 @@ div.home-page header div.header-image {
   line-height: normal;
 }
 
-.post-update-text .post-link{
-  color: #646464 !important;
-  font-size: 16px;
-}
+// .post-update-text .post-link{
+//   // color: #646464 !important;
+//   font-size: 16px;
+//   // transition: all .2s ease-in-out;
+//   // background: linear-gradient(to top, $brand-blue-light 50%,transparent 50%);
+//   // background-size: 100% 200%;
+//   // background-position: top left;
+// }
 
-.post-update-text .post-link svg {
-  fill: #646464;
-  margin-left: 12px;
-}
+// .post-update-text .post-link svg {
+//   // fill: #646464;
+//   margin-left: 12px;
+//   // transition: all .2s ease-in-out;
+// }
 
+// .post-update-text .post-link:hover {
+//   // color: #fff !important;
+//   // background-position: bottom left;
+// }
+
+// .post-update-text .post-link:hover svg {
+//   fill: #fff !important;
+// }
+
+// for all .post-link 
 .post-link {
   display: inline-block;
   color: $dark-blue !important; //$body-text
@@ -280,12 +295,17 @@ div.home-page header div.header-image {
   border-bottom: 2px solid $primary-blue;
   max-width: max-content;
   font-weight: 500;
+  transition: all .2s ease-in-out;
 }
 
 .post-link svg {
   fill: $dark-blue;
   margin-left: 12px;
 }
+
+// .post-link:hover {
+//   border-bottom: 2px solid $accent-yellow;
+// }
 
 article.landing-page header {
   // width: 100%;
@@ -359,6 +379,25 @@ article.landing-page header div.header-content {
   position: relative;
 }
 
+article.landing-page .page-subtitle {
+  padding-top: 1rem;
+}
+
+article.landing-page .page-subtitle h2 {
+  font-family: 'Poppins', Arial, sans-serif; 
+  font-weight: 400;
+  font-size: calc(1rem + .7vw);
+}
+
+article.landing-page .page-subtitle h2::after {
+  display: block;
+  content: " ";
+  height: 4px;
+  width: 50px;
+  background: $link-red;
+  margin: 1.5rem 0;
+}
+
 
 .flex-container {
   @include flexbox();
@@ -374,30 +413,57 @@ article.landing-page header div.header-content {
 
 .flex-item {
   // @include flex(0 0 auto);
-  flex: 0 0 32%;
+  flex: 1 0 50%;
+max-width: 100%;
+margin: 1.5rem 1.5rem 1.5rem 0;
+  // flex: 0 0 32%;
   // width: 33.3333333333%;
   max-width: 100%;
   // padding-right: calc(1.5rem * .5);
   // padding-left: calc(1.5rem * .5);
-  margin-top: 1.5rem;
+  // margin-top: 1.5rem;
 }
 
 .grid-container {
   display: grid;
-grid-column-gap: 30px;
-    grid-template-columns: [start] repeat(12,1fr) [end];
-    margin: auto;
+  grid-column-gap: 30px;
+  grid-template-columns: [start] repeat(9,1fr) [end];
+  margin: auto;
+  // margin-top: 30px
 }
 
+  @media (min-width: 1069px) {
+.grid-container {
+  grid-template-columns: [start] repeat(12,1fr) [end];
+  // margin-top: 60px
+}
+  }
+
+
 .grid-container .project-card {
-  grid-column-end: span 4;
-max-width: none;
+  // grid-column-end: span 4;
+// max-width: none;
+// max-width: 400px;
 margin-top: 30px;
 position: relative;
 margin-bottom: 50px;
 // height: 233px;
 } 
-.grid-container .project-card a {
+
+  @media (min-width: 736px) {
+.grid-container .project-card {
+  grid-column-end: span 4;
+  max-width: none;
+}
+  }
+
+    @media (max-width: 736px){
+    .grid-container .project-card {
+      grid-column: start / end;
+    }
+  }
+
+.grid-container .project-card {
 background-color: white;
   // border: solid 2px #d8d8d8;
   // width: 100%;
@@ -406,13 +472,86 @@ background-color: white;
   flex-direction: column;
   // justify-content: flex-end;
   // align-items: flex-end;
+  border-bottom: 5px solid $accent-yellow;
 }
 
-.grid-container .project-card a .card-header,
-.grid-container .project-card a .card-content {
-  padding: 15px;
-
+.grid-container .project-card.featured {
+  border-bottom: 5px solid $primary-blue;
 }
+
+.grid-container .project-card.featured h3 {
+  color: $primary-blue;
+}
+
+.grid-container .project-card.report {
+  border-bottom: 5px solid $dark-blue;
+}
+
+
+.grid-container .project-card .resource-type,
+.grid-container .project-card .card-header,
+.grid-container .project-card .card-content {
+  padding: 10px 15px;
+}
+
+.grid-container .project-card .card-image {
+//   object-fit: cover;
+// // height: 100%;
+height: 225px;
+// width: 100%;
+// transform: scale(1);
+// object-position: center;
+overflow: hidden;
+position: relative;
+}
+
+.grid-container .project-card .card-image img {
+  object-fit: cover;
+height: 100%;
+// height: 225px;
+width: 100%;
+transform: scale(1);
+object-position: center;
+// overflow: hidden;
+// position: relative;
+// max-width: none;
+}
+
+.grid-container .project-card .card-header {
+  font-size: 0.875rem;
+  color: #646464;
+  text-transform: uppercase;
+  letter-spacing: 0.175rem;
+}
+
+.grid-container .project-card .resource-type {
+  font-size: 0.875rem;
+  color: #646464;
+  text-transform: uppercase;
+  font-weight: 500;
+  // color: $link-red;
+}
+
+.grid-container .project-card a h3 {
+  margin-top: 0;
+  line-height: 1.4;
+}
+
+.grid-container .project-card a .card-content p {
+  color: $body-text;
+}
+
+.grid-container .project-card a.external-link .card-image::before {
+  width: calc(1.3rem + .6vw);
+  height: calc(1.3rem + .6vw);
+  content: url("https://raw.githubusercontent.com/virginiaequitycenter/cville-equity-atlas/main/assets/img/external-link-sq-arrow-up.svg");
+  margin: 15px;
+  // float: right;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  }
+
 
 div.hero-container {
   // @include flexbox();
@@ -656,13 +795,76 @@ a div.hero-container div.flex-item-two p {
 }
 
 div.main-container a {
+  position: relative;
+  // color: $dark-blue;
   color: $brand-blue-light;
+  // color: $body-text;
   text-decoration: none;
+  // border-bottom: 2px solid $primary-blue;
+  // background-color: none;
+  // -webkit-transition: color 0.3s, background-color 0.3s;
+  // transition: color 0.3s, background-color 0.3s;
+transition: all .2s ease-in-out;
+// background: linear-gradient(to top, $brand-blue-light 50%,transparent 50%);
+// background-size: 100% 200%;
+// background-position: top left;
 }
 
 div.main-container a:hover {
   color: $dark-blue;
-  text-decoration: none;
+  // color: white;
+  // background-color: $brand-blue-light;
+  // color: #fff !important;
+// background-position: bottom left;
+  // border-bottom: 2px solid $accent-yellow;
+}
+
+// div.main-container a svg {
+//   transition: all .2s ease-in-out;
+// }
+
+// div.main-container a:hover svg{
+//   fill: #FFF !important;
+// }
+
+.downloadBtn {
+  display: inline-flex;
+  align-items: center;
+  color: $secondary-blue !important;
+  padding: .25rem 0;
+}
+
+// .downloadBtn:hover {
+//   color: #fff !important;
+// }
+
+.downloadBtn svg {
+  padding-right: .4em;
+  fill: $secondary-blue !important;
+}
+
+#toTopBtn {
+  display: none; 
+  position: fixed; 
+  bottom: 20px; 
+  right: 0px; //20px; 
+  z-index: 99; 
+  border: none; 
+  outline: none; 
+  background-color: transparent; //transparent;
+  cursor: pointer;
+
+  svg {
+  height: 50px;
+  width: 50px;
+  fill: #d8d8d8; //#8DA7BE; //$secondary-blue
+  }
+}
+
+#toTopBtn:hover {
+  svg {
+    fill: $brand-blue-light;//$secondary-blue; //$link-red;
+  }
 }
 
 
@@ -717,41 +919,6 @@ article.landing-page .breadcrumb-container {
   }
 }
 
-#myBtn {
-  display: none; 
-  position: fixed; 
-  bottom: 20px; 
-  right: 0px; //20px; 
-  z-index: 99; 
-  border: none; 
-  outline: none; 
-  background-color: #ffffff; //transparent;
-  cursor: pointer;
-
-  svg {
-  height: 50px;
-  width: 50px;
-  fill: #d8d8d8; //#8DA7BE; //$secondary-blue
-  }
-}
-
-#myBtn:hover {
-  svg {
-    fill: $secondary-blue; //$link-red;
-  }
-}
-
-.downloadBtn {
-  display: inline-flex;
-  align-items: center;
-  color: $secondary-blue !important;
-  padding: .25rem 0;
-
-  svg {
-    padding-right: .4em;
-    fill: $secondary-blue !important;
-  }
-}
 
 // RMD Reports
 
