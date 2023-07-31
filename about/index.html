@@ -54,12 +54,17 @@
 
   
 
+  
+
 </head>
 
   <body>
-    <header class="nav">
+    <a href="#maincontent" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    <header id="topNav" class="nav">
     <div class="nav-wrap">
-    <nav id="topNav" class="navbar navbar-expand-md" role="navigation" aria-label="main navigation">
+    <nav class="navbar navbar-expand-md" role="navigation" aria-label="main navigation">
         <!-- <div class="nav-container"> -->
         <div class="nav-main">
             <a class="home-page" href="https://virginiaequitycenter.github.io/cville-equity-atlas" title="Charlottesville Regional Equity Atlas">
@@ -97,6 +102,12 @@
                             <li class="nav-dropdown-item">
                                 <a class="dropdown-item" href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/stepping-stones/">
                                     Stepping Stones
+                                </a>
+                            </li>
+                            
+                            <li class="nav-dropdown-item">
+                                <a class="dropdown-item" href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/stepping-stones-supplement/">
+                                    Stepping Stones Supplement
                                 </a>
                             </li>
                             
@@ -189,6 +200,12 @@
                                     </li>
                                     
                                     <li class="nav-item level-2">
+                                        <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/stepping-stones-supplement/" class="nav-link">
+                                            Stepping Stones Supplement
+                                        </a>
+                                    </li>
+                                    
+                                    <li class="nav-item level-2">
                                         <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/orange-dot/" class="nav-link">
                                             Orange Dot
                                         </a>
@@ -233,6 +250,15 @@
 </div>
 </header>
 
+
+    <button onclick="topFunction()" id="toTopBtn" title="Go to top">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      viewBox="0 0 20 15" style="enable-background:new 0 0 20 15;" xml:space="preserve">
+        <path d="M20,0H0v15h20V0z M13.3,7.2c-0.4,0.3-0.9,0.3-1.3,0l-1.2-1.2v5c0,0.5-0.4,0.9-0.9,0.9s-0.9-0.4-0.9-0.9v-5L7.9,7.2
+        C7.5,7.6,7,7.5,6.6,7.1C6.4,6.8,6.4,6.3,6.6,6l2.7-2.7c0.4-0.4,0.9-0.4,1.3,0L13.3,6C13.7,6.3,13.7,6.9,13.3,7.2z"/>
+      </svg>
+    </button> 
+
     <article class="landing-page">
     <header>
         <div class="header-image" style="background-image: url(../assets/img/center_for_community_partnership_ss_header.webp);" height="500" width="100%">
@@ -261,25 +287,21 @@
     
     
     <div id="maincontent" class="main-container">
-        <div class="flex-container about">
-<div style="max-width: 740px; margin-right: 3rem;">
-    <div class="post-update-text">
-        <h2>Democratization of Data</h2>
-        <div class="line"></div>
-        <p class="description"><em>An Initiative of the Center for the Redress of Inequity Through Community-Engaged Scholarship</em></p>
-    </div>
+        <div class="page-subtitle">
+    <h2>Democratization of Data</h2>
+
+</div> 
+<div style="max-width: 60vw; margin: 2rem 0">
+        <p><em>An Initiative of the Center for the Redress of Inequity Through Community-Engaged Scholarship</em></p>
+
+        <img src="../assets/img/equity-center-logo.png" height="100vw" style="margin: 1rem 0;">
+        <p style="color:#FF5A5F; font-size: larger;">The Democratization of Data Initiative puts equity at the center of data science and social change.</p>
     
-    <p style="font-family: 'Poppins', Arial, sans-serif; color:#FF5A5F; font-size: larger;">The Democratization of Data Initiative puts equity at the center of data science and social change.</p>
+        <p>Guided by the UVA Equity Center’s commitment to authentic partnership and shared power, we work <em>with</em> community members, rather than <em>for</em>. Through deep engagement with impacted communities, we gather insights and information to accurately measure and articulate regional patterns of racial and socioeconomic inequity, illuminating issues like transportation, housing, and policing.</p>
+    
+        <p>The initiative seeks to enable data-informed advocacy to support community building and collective action for change. We generate contextualized analysis and data platforms and tools, such as interactive maps and data visualizations, combined with narrative storytelling. These tools make shared information accessible for civic and community leaders to use in the pursuit of equity. To promote accountability, we track institutional progress toward equity goals, engaging and empowering community members in every step to ensure lasting, meaningful change.</p>    
 
-<p>Guided by the UVA Equity Center’s commitment to authentic partnership and shared power, we work <em>with</em> community members, rather than <em>for</em>. Through deep engagement with impacted communities, we gather insights and information to accurately measure and articulate regional patterns of racial and socioeconomic inequity, illuminating issues like transportation, housing, and policing.</p>
-
-<p>The initiative seeks to enable data-informed advocacy to support community building and collective action for change. We generate contextualized analysis and data platforms and tools, such as interactive maps and data visualizations, combined with narrative storytelling. These tools make shared information accessible for civic and community leaders to use in the pursuit of equity. To promote accountability, we track institutional progress toward equity goals, engaging and empowering community members in every step to ensure lasting, meaningful change.</p>    
 </div>
-<img style="margin-top: 2rem;" src="../assets/img/equity-center-logo.png" height="120px">
-</div>
-<!-- <div style="max-width: 740px; margin-right: 4rem;">
-
-</div> -->
     </div>    
 </article>
 
@@ -328,18 +350,26 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous" async></script>
     <script>
-
+      let toTopButton = document.getElementById("toTopBtn");
       let topnav = document.getElementById("topNav")
       window.onscroll = function() {scrollFunction()};
       
       function scrollFunction() {
         if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+          toTopButton.style.display = "block";
           topnav.classList.add('hidden');
+          // topnav.style.marginTop = ""
         } else {
+          toTopButton.style.display = "none";
           topnav.classList.remove('hidden')
         }
       }
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
     </script>
+    
 
 </body>
 </html>

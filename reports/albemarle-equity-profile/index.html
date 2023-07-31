@@ -72,12 +72,16 @@
 <!-- <script src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/js/toc/highlightjs-9.12.0/highlight.js"></script> -->
   
 
+  
+
 </head>
 <body class="report">
-
-  <header class="nav">
+  <a href="#maincontent" class="visually-hidden focusable skip-link">
+    Skip to main content
+  </a>
+  <header id="topNav" class="nav">
     <div class="nav-wrap">
-    <nav id="topNav" class="navbar navbar-expand-md" role="navigation" aria-label="main navigation">
+    <nav class="navbar navbar-expand-md" role="navigation" aria-label="main navigation">
         <!-- <div class="nav-container"> -->
         <div class="nav-main">
             <a class="home-page" href="https://virginiaequitycenter.github.io/cville-equity-atlas" title="Charlottesville Regional Equity Atlas">
@@ -115,6 +119,12 @@
                             <li class="nav-dropdown-item">
                                 <a class="dropdown-item" href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/stepping-stones/">
                                     Stepping Stones
+                                </a>
+                            </li>
+                            
+                            <li class="nav-dropdown-item">
+                                <a class="dropdown-item" href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/stepping-stones-supplement/">
+                                    Stepping Stones Supplement
                                 </a>
                             </li>
                             
@@ -207,6 +217,12 @@
                                     </li>
                                     
                                     <li class="nav-item level-2">
+                                        <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/stepping-stones-supplement/" class="nav-link">
+                                            Stepping Stones Supplement
+                                        </a>
+                                    </li>
+                                    
+                                    <li class="nav-item level-2">
                                         <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/orange-dot/" class="nav-link">
                                             Orange Dot
                                         </a>
@@ -273,15 +289,12 @@
 
     
 
-    <button onclick="topFunction()" id="myBtn" title="Go to top">
+    <button onclick="topFunction()" id="toTopBtn" title="Go to top">
       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
       viewBox="0 0 20 15" style="enable-background:new 0 0 20 15;" xml:space="preserve">
         <path d="M20,0H0v15h20V0z M13.3,7.2c-0.4,0.3-0.9,0.3-1.3,0l-1.2-1.2v5c0,0.5-0.4,0.9-0.9,0.9s-0.9-0.4-0.9-0.9v-5L7.9,7.2
         C7.5,7.6,7,7.5,6.6,7.1C6.4,6.8,6.4,6.3,6.6,6l2.7-2.7c0.4-0.4,0.9-0.4,1.3,0L13.3,6C13.7,6.3,13.7,6.9,13.3,7.2z"/>
       </svg>
-      <!-- <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"/>
-      </svg>      -->
     </button> 
 
     <div id="maincontent" class="main-container">
@@ -852,17 +865,17 @@ $(document).ready(function () {
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous" async></script>
 <script>
-  let mybutton = document.getElementById("myBtn");
+  let toTopButton = document.getElementById("toTopBtn");
   let topnav = document.getElementById("topNav")
   window.onscroll = function() {scrollFunction()};
   
   function scrollFunction() {
     if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
-      mybutton.style.display = "block";
+      toTopButton.style.display = "block";
       topnav.classList.add('hidden');
       // topnav.style.marginTop = ""
     } else {
-      mybutton.style.display = "none";
+      toTopButton.style.display = "none";
       topnav.classList.remove('hidden')
     }
   }

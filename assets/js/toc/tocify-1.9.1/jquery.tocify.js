@@ -126,7 +126,8 @@
         // "pretty" - #looks-like-a-nice-url-and-is-easily-readable
         // function(text, element){} - Your own hash generation function that accepts the text as an
         // argument, and returns the hash value.
-        hashGenerator: "compact",
+        // ANY CHOICE HERE WILL BE PRETTY, SINCE IT WASNT WORKING OTHERWISE - SEE HASHGENERATOR TO CHANGE THIS (LINE 417)
+        hashGenerator: "pretty",
 
         // **highlightDefault**: Accepts a boolean: true or false
         // Set's the first TOC item as active if no other TOC item is active.
@@ -418,31 +419,64 @@
         var hashValue = "",
           hashGeneratorOption = this.options.hashGenerator;
 
-        if (hashGeneratorOption === "pretty") {
+          // PRETTY NOT WORKING, DEFAULTS TO ELSE IF FUNCTION
+        // if (hashGeneratorOption === "pretty") {
 
-          // prettify the text
-          hashValue = self.text().toLowerCase().replace(/\s/g, "-");
+        //   // prettify the text
+        //   hashValue = self.text().toLowerCase().replace(/\s/g, "-");
 
-          // fix double hyphens
-          while (hashValue.indexOf("--") > -1) {
-            hashValue = hashValue.replace(/--/g, "-");
-          }
+        //   // fix double hyphens
+        //   while (hashValue.indexOf("--") > -1) {
+        //     hashValue = hashValue.replace(/--/g, "-");
+        //   }
 
-          // fix colon-space instances
-          while (hashValue.indexOf(":-") > -1) {
-            hashValue = hashValue.replace(/:-/g, "-");
-          }
+        //   // fix colon-space instances
+        //   while (hashValue.indexOf(":-") > -1) {
+        //     hashValue = hashValue.replace(/:-/g, "-");
+        //   }
 
-        } else if (typeof hashGeneratorOption === "function") {
+        // } else if (typeof hashGeneratorOption === "function") {
 
-          // call the function
-          hashValue = hashGeneratorOption(self.text(), self);
+        //   // call the function
+        //   hashValue = hashGeneratorOption(self.text(), self);
 
-        } else {
+        // } else {
 
-          // compact - the default
-          hashValue = self.text().replace(/\s/g, "");
+        //   // compact - the default
+        //   hashValue = self.text().replace(/\s/g, "");
 
+        // }
+
+        //FORCE PRETTY TO BE THE DEFAULT
+        // prettify the text
+        hashValue = self.text().toLowerCase().replace(/\s/g, "-");
+
+        // fix double hyphens
+        while (hashValue.indexOf("--") > -1) {
+          hashValue = hashValue.replace(/--/g, "-");
+        }
+
+        // fix colon-space instances
+        while (hashValue.indexOf(":-") > -1) {
+          hashValue = hashValue.replace(/:-/g, "-");
+        }
+
+        // fix commas
+        while (hashValue.indexOf(",-") > -1) {
+          hashValue = hashValue.replace(/,-/g, "-");
+        }
+
+        // fix parenthesis
+        while (hashValue.indexOf("-(") > -1) {
+          hashValue = hashValue.replace(/-\(/g, "-");
+        }
+
+        while (hashValue.indexOf(")") > -1) {
+          hashValue = hashValue.replace(/\)/g, "");
+        }
+
+        while (hashValue.indexOf(")-") > -1) {
+          hashValue = hashValue.replace(/\)-/g, "-");
         }
 
         // add the index if we need to

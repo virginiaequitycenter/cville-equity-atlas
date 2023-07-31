@@ -19,7 +19,7 @@
   <title>Charlottesville Regional Equity Atlas</title>
 
   <!-- Open Graph http://ogp.me/ -->
-  <meta property="og:title" content="Charlottesville Equity Atlas">
+  <meta property="og:title" content="Charlottesville Regional Equity Atlas">
   <meta property="og:site_name" content="Charlottesville Regional Equity Atlas">
   <meta property="og:url" content="https://virginiaequitycenter.github.io/cville-equity-atlas/">
   
@@ -44,7 +44,7 @@
   <!-- Twitter Cards https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="EquityCenterUVA">
-  <meta name="twitter:title" content="Charlottesville Equity Atlas | Cville Equity Atlas">
+  <meta name="twitter:title" content="Charlottesville Regional Equity Atlas | Cville Equity Atlas">
   <meta name="twitter:description" content="An Equity Center Initiative in Democratization of Data to provide tools that enable data rich advocacy in support of community building and collective action for change.">
   <meta property="twitter:image" content="https://raw.githubusercontent.com/virginiaequitycenter/cville-equity-atlas/main/assets/img/atlas-image-card.webp">
 
@@ -63,12 +63,17 @@
 
   
 
+  
+
 </head>
 
   <body>
-    <header class="nav">
+    <a href="#maincontent" class="visually-hidden focusable skip-link">
+      Skip to main content
+    </a>
+    <header id="topNav" class="nav">
     <div class="nav-wrap">
-    <nav id="topNav" class="navbar navbar-expand-md" role="navigation" aria-label="main navigation">
+    <nav class="navbar navbar-expand-md" role="navigation" aria-label="main navigation">
         <!-- <div class="nav-container"> -->
         <div class="nav-main">
             <a class="home-page" href="https://virginiaequitycenter.github.io/cville-equity-atlas" title="Charlottesville Regional Equity Atlas">
@@ -106,6 +111,12 @@
                             <li class="nav-dropdown-item">
                                 <a class="dropdown-item" href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/stepping-stones/">
                                     Stepping Stones
+                                </a>
+                            </li>
+                            
+                            <li class="nav-dropdown-item">
+                                <a class="dropdown-item" href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/stepping-stones-supplement/">
+                                    Stepping Stones Supplement
                                 </a>
                             </li>
                             
@@ -198,6 +209,12 @@
                                     </li>
                                     
                                     <li class="nav-item level-2">
+                                        <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/stepping-stones-supplement/" class="nav-link">
+                                            Stepping Stones Supplement
+                                        </a>
+                                    </li>
+                                    
+                                    <li class="nav-item level-2">
                                         <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/orange-dot/" class="nav-link">
                                             Orange Dot
                                         </a>
@@ -242,6 +259,15 @@
 </div>
 </header>
 
+
+    <button onclick="topFunction()" id="toTopBtn" title="Go to top">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      viewBox="0 0 20 15" style="enable-background:new 0 0 20 15;" xml:space="preserve">
+        <path d="M20,0H0v15h20V0z M13.3,7.2c-0.4,0.3-0.9,0.3-1.3,0l-1.2-1.2v5c0,0.5-0.4,0.9-0.9,0.9s-0.9-0.4-0.9-0.9v-5L7.9,7.2
+        C7.5,7.6,7,7.5,6.6,7.1C6.4,6.8,6.4,6.3,6.6,6l2.7-2.7c0.4-0.4,0.9-0.4,1.3,0L13.3,6C13.7,6.3,13.7,6.9,13.3,7.2z"/>
+      </svg>
+    </button> 
+
     <div class="home-page">
     <header>
         <div class="header-image" style="background-image: url(https://virginiaequitycenter.github.io/cville-equity-atlas/assets/img/detail.png);" height="500" width="100%">
@@ -272,53 +298,60 @@
     
     <div id="maincontent" class="main-container">
         <h2>Regional Equity Highlights</h2>
-        <hr>
-        <div class="flex-container">
-          <div class="flex-item">
+
+        <div class="grid-container">
+          <div class="project-card featured">
             <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/stepping-stones/">
-              <div class="content-box">
-                <div class="content-text">
-                  <h3>Stepping Stones</h3>
-                  <p>Report on Community Well-Being of Children and Families in Charlottesville and Albemarle</p>
-                </div>
-                <div class="partner-logos" style="background-image: url(https://virginiaequitycenter.github.io/cville-equity-atlas/assets/img/sol-detail.png);"></div>
+              <div class="card-image">
+                      <img src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/img/sol-detail.png"/>
               </div>
-              </a>
+              <div class="card-header">
+                  Report | June 2023
+              </div>
+              <div class="card-content">
+                      <h3>Stepping Stones</h3>
+                  <p>Report on Community Well-Being of Children and Families in Charlottesville and Albemarle</p>    
+              </div>
+            </a>
           </div>
-        
-          <div class="flex-item">
+          <div class="project-card featured">
             <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/orange-dot/">
-            <div class="content-box">
-              <div class="content-text">
-                <h3>Orange Dot Report</h3>
-                <p>Economic Indicators Directly Impacting Families Across the Greater Charlottesville Region</p>
+              <div class="card-image">
+                  <img src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/img/living-wage-detail.png"/>
               </div>
-              <div class="partner-logos" style="background-image: url(https://virginiaequitycenter.github.io/cville-equity-atlas/assets/img/living-wage-detail.png);"></div>
-            </div>
-          </a>
+              <div class="card-header">
+                  Report | October 2022
+              </div>
+              <div class="card-content">
+                      <h3>Orange Dot Report</h3>
+                  <p>Economic Indicators Directly Impacting Families Across the Greater Charlottesville Region</p>    
+              </div>
+            </a>
           </div>
-        
-          <div class="flex-item">
+          <div class="project-card featured">
             <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/albemarle-equity-profile/">
-            <div class="content-box">
-              <div class="content-text">
-                <h3>Albemarle County Equity Profile</h3>
-                <p>Centering Equity in Evaluating Well-Being & Quality of Life for Albemarle County Residents</p>
+              <div class="card-image">
+                  <img src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/img/alb-equity-detail.png"/>
               </div>
-              <div class="partner-logos" style="background-image: url(https://virginiaequitycenter.github.io/cville-equity-atlas/assets/img/alb-equity-detail.png);"></div>
-            </div>
+              <div class="card-header">
+                  Report | May 2021
+              </div>
+              <div class="card-content">
+                  <h3>Albemarle County Equity Profile</h3>
+                  <p>Centering Equity in Evaluating Well-Being & Quality of Life for Albemarle County Residents</p>    
+              </div>
             </a>
           </div>
         
         </div>
         
         <a class="post-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/">
-          <span>See all Regional Equity Reports</span>
+          <span>See all Reports</span>
           <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
         </a>
 
         <h2 style="margin-top:3rem;">Who We Are</h2>
-        <hr>
+        <!-- <hr> -->
         <p style="margin-top:1.5rem;padding-bottom:1.5rem;">We're the Democratization of Data team at the UVA Equity Center.</p>
 
         <a class="post-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas/about/">
@@ -374,18 +407,26 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous" async></script>
     <script>
-
+      let toTopButton = document.getElementById("toTopBtn");
       let topnav = document.getElementById("topNav")
       window.onscroll = function() {scrollFunction()};
       
       function scrollFunction() {
         if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+          toTopButton.style.display = "block";
           topnav.classList.add('hidden');
+          // topnav.style.marginTop = ""
         } else {
+          toTopButton.style.display = "none";
           topnav.classList.remove('hidden')
         }
       }
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
     </script>
+    
 
 </body>
 </html>
