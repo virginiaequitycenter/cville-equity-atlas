@@ -22,3 +22,19 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules/
+
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
+  - scope:
+      path: "pages/reports"
+    values:
+      og_type: "article"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      is_page: true
+      og_type: "website"

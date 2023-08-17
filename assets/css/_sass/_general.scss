@@ -328,7 +328,7 @@ article.landing-page header {
 article.landing-page header div.header-image {
   width: 100%;
   max-width: none;
-  height: 500px;
+  height: 400px;//500px;
   position: relative;
   overflow: hidden;
 
@@ -366,9 +366,9 @@ article.landing-page header div.header-overlay {
   // left: 0;
   bottom: 0;
   width: 100%;
-  height: 250px;
-  opacity: 0.5;
-  background: -webkit-gradient(linear,left top,left bottom,from(transparent),to(#052F5F));
+  height: 80%; //250px;
+  opacity: 0.6;
+  background: -webkit-gradient(linear,left top,left bottom,from(transparent),to(#052F5F)); 
   background: linear-gradient(to bottom,transparent 0%,#052F5F 100%);
 }
 
@@ -455,10 +455,14 @@ margin-bottom: 50px;
   grid-column-end: span 4;
   max-width: none;
 }
+.grid-container .project-card.dashboard {
+  grid-column-end: span 6;
+}
   }
 
     @media (max-width: 736px){
-    .grid-container .project-card {
+    .grid-container .project-card,
+    .grid-container .project-card.dashboard {
       grid-column: start / end;
     }
   }
@@ -481,6 +485,10 @@ background-color: white;
 
 .grid-container .project-card.featured h3 {
   color: $primary-blue;
+}
+
+.grid-container .project-card.dashboard {
+  border-bottom: 5px solid $primary-blue;
 }
 
 .grid-container .project-card.report {

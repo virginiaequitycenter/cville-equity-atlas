@@ -1,6 +1,11 @@
-- title: Dashboard
-  url: /cville-equity-dashboard/
-  level: 1
+- title: Dashboards
+  url: /dashboards/
+  level: 2
+  subnav:
+  - page: Regional Equity Dashboard
+    url: /dashboards/cville-equity-dashboard/
+  - page: Climate Equity Dashboard
+    url: /dashboards/climate-dashboard/
 - title: Reports
   url: /reports/
   level: 2
