@@ -794,7 +794,9 @@ a div.hero-container div.flex-item-two p {
   color: #00416B;
   border-color: #204d74 ;
   font-family: $font-heading;
-  font-size: 1.2em;
+  // font-size: 1.2em;
+  font-size: 1rem;
+margin-bottom: 1rem;
 }
 
 .atlas-btn:hover {

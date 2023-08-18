@@ -51,9 +51,6 @@
   {% endfor %}
   {% endif %}
 
-  {% assign description = page.excerpt | default: site.description | strip_html | normalize_whitespace | escape %}
-  <meta name="description" content="{{ description }}">
-
   <!-- Twitter Cards https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="{{ site.twitter_username }}">
@@ -81,20 +78,10 @@
   {% endif %}
 
   {% if page.toc-float %}
-<!-- <script src="{{ "/assets/js/toc/header-attrs-2.20/header-attrs.js" | prepend: site.url }}"></script> -->
 <!-- <script src="{{ "/assets/js/toc/jquery-3.6.0/jquery-3.6.0.min.js" | prepend: site.url }}"></script> -->
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
-<!-- <link href="{{ "/assets/js/toc/bootstrap-5.2.2/bootstrap.min.css" | prepend: site.url }}" rel="stylesheet" /> -->
-<!-- <script src="{{ "/assets/js/toc/bootstrap-5.2.2/bootstrap.bundle.min.js" | prepend: site.url }}"></script> -->
-<!-- <script src="{{ "/assets/js/toc/bs3compat-0.4.2/transition.js" | prepend: site.url }}"></script> -->
-<!-- <script src="{{ "/assets/js/toc/bs3compat-0.4.2/tabs.js" | prepend: site.url }}"></script> -->
-<!-- <script src="{{ "/assets/js/toc/bs3compat-0.4.2/bs3compat.js" | prepend: site.url }}"></script> -->
 <script src="{{ "/assets/js/toc/jqueryui-1.11.4/jquery-ui.min.js" | prepend: site.url }}"></script>
 <!-- <link href="{{ "/assets/js/toc/tocify-1.9.1/jquery.tocify.css" | prepend: site.url }}" rel="stylesheet" /> -->
 <script src="{{ "/assets/js/toc/tocify-1.9.1/jquery.tocify.js" | prepend: site.url }}"></script>
-<!-- <script src="{{ "/assets/js/toc/navigation-1.1/tabsets.js" | prepend: site.url }}"></script> -->
-<!-- <link href="{{ "/assets/js/toc/highlightjs-9.12.0/default.css" | prepend: site.url }}" rel="stylesheet" /> -->
-<!-- <script src="{{ "/assets/js/toc/highlightjs-9.12.0/highlight.js" | prepend: site.url }}"></script> -->
   {% endif %}
 
   {% if page.tippy %}
