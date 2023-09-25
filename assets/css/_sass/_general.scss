@@ -389,7 +389,7 @@ article.landing-page .page-subtitle h2 {
   font-size: calc(1rem + .7vw);
 }
 
-article.landing-page .page-subtitle h2::after {
+article.landing-page .page-subtitle::after {
   display: block;
   content: " ";
   height: 4px;
@@ -399,26 +399,26 @@ article.landing-page .page-subtitle h2::after {
 }
 
 
+
 .flex-container {
   @include flexbox();
   @include flex-flow(row wrap);
-  @include align-items(stretch);
+  @include align-items(center);
   @include justify-content(space-between);
   // margin-top: calc(-1 * 1.5rem);
   // margin-right: calc(-.5 * 1.5rem);
   // margin-left: calc(-.5 * 1.5rem);
   // padding-top: 3rem !important;
-  padding-bottom: 3rem !important;
+  // padding-bottom: 3rem !important;
 }
 
 .flex-item {
   // @include flex(0 0 auto);
-  flex: 1 0 50%;
-max-width: 100%;
-margin: 1.5rem 1.5rem 1.5rem 0;
+  flex: 0 0 70%;
+// max-width: 100%;
+// margin: 1.5rem 1.5rem 1.5rem 0;
   // flex: 0 0 32%;
   // width: 33.3333333333%;
-  max-width: 100%;
   // padding-right: calc(1.5rem * .5);
   // padding-left: calc(1.5rem * .5);
   // margin-top: 1.5rem;
@@ -634,6 +634,7 @@ a.report-link {
 }
 
 @media screen and (max-width: 768px) {
+
   .flex-item, .flex-item-two {
     // width: 100%;
     flex: 0 0 100%;

@@ -9,27 +9,24 @@ There's a [homepage for all Atlas-related documentation here](https://github.com
 ## Table of Contents
 
 1. [Site basics](#site-basics)
-2. [Contribute to the site](#contribute-to-the-site)
-3. [Add an issue](#get-help-or-add-an-issue)
-4. [Working with the site locally](#working-with-the-site-locally)
-	* [Prerequisites](#prerequisites)
-	* [Installation](#installation)
-	* [Building the site](#building-the-site)
+2. [Working with Jekyll](#working-with-jekyll)
+3. [Using R Markdown documents](#using-r-markdown-documents)
+4. [Embed R Shiny apps](#embed-r-shiny-apps)
 
 ## Site Basics
 
 [Equityatlas.virginiaequitycenter.org](https://virginiaequitycenter.github.io/cville-equity-atlas/)
   * Our "live" website that the world can see.
-  * The site is published using Github pages (more on that below), but also has a redirect from [equityatlas.virginiaequitycenter.org](equityatlas.virginiaequitycenter.org)
-  * Currently, updating the code in the "main" branch of this repo will not update the live site. The site is currently deployed from the gh-pages branch - more on that [here]().
+  * The site is published using Github pages, but also has a redirect from [equityatlas.virginiaequitycenter.org](equityatlas.virginiaequitycenter.org)
+  * Currently, updating the code in the "main" branch of this repo will not update the live site. The site is currently deployed from the gh-pages branch - more on that [here](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/docs/README.md#publishing-updates).
 
 ## Working with Jekyll
 
 [Jekyll static site builder](https://jekyllrb.com/)
   * We use [Jekyll](https://jekyllrb.com) for publishing our site.
   * Jekyll takes markdown and html files and uses layouts to create a static website. They provide ample [documentation on the basics](https://jekyllrb.com/docs/), and there is also a large community of users, so searching for help on stackoverflow and the like often provides a lot of solutions.
-  * [Learn how to work with the site locally]() and [publish updates]().
-  * Get to know the Jekyll directory structure for the Equity Atlas site [here]().
+  * [Learn how to work with the site locally](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/docs/README.md#working-with-the-site-locally) and [publish updates](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/docs/README.md#publishing-updates).
+  * Get to know the Jekyll directory structure for the Equity Atlas site [here](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/docs/README.md#site-structure).
   * Understand front matter in Jekyll and how to make new pages [here]().
 
 ## Using R Markdown documents
@@ -41,5 +38,5 @@ There's a [homepage for all Atlas-related documentation here](https://github.com
 
    * The Equity Atlas also embeds R shiny applications, using the `<iframe>` tag. See an [example page](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/pages/cville-equity-dashboard.html), and further documentation [here]().
 
-## Making other site updates
+
 
