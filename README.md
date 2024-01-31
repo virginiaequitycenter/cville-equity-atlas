@@ -36,7 +36,7 @@ There's a [homepage for all Atlas-related documentation here](https://github.com
 
 ## Embed R Shiny apps
 
-   * The Equity Atlas also embeds R shiny applications, using the `<iframe>` tag. See an [example page](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/pages/cville-equity-dashboard.html), and further documentation [here]().
+   * The Equity Atlas also embeds R shiny applications, using the `<iframe>` tag. See an [example page](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/pages/dashboards/cville-equity-dashboard.html), and further documentation [here]().
 
 
 
