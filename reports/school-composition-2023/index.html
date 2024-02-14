@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q05T97F4LC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Q05T97F4LC');
+  </script>
+
+  
+  <title>Charlottesville and Albemarle School Demographics | Charlottesville Regional Equity Atlas </title>
+
+  
+  <meta name="description" content="An Equity Center Initiative in Democratization of Data to provide tools that enable data rich advocacy in support of community building and collective action for change.">
+
+  <!-- Open Graph http://ogp.me/ -->
+  <meta property="og:title" content="Charlottesville and Albemarle School Demographics">
+  <meta property="og:description" content="An Equity Center Initiative in Democratization of Data to provide tools that enable data rich advocacy in support of community building and collective action for change.">
+  <meta property="og:site_name" content="Charlottesville Regional Equity Atlas">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/school-composition-2023/">
+  
+  <meta property="og:image" content="https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/assets/img/detail.png">
+  <meta property="og:image:type" content="image/jpg">
+  <meta property="og:image:width" content="2134">
+  <meta property="og:image:height" content="1160">
+  
+
+  
+
+  <!-- Twitter Cards https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="EquityCenterUVA">
+  <meta name="twitter:title" content="Charlottesville and Albemarle School Demographics | Charlottesville Regional Equity Atlas">
+  <meta name="twitter:description" content="An Equity Center Initiative in Democratization of Data to provide tools that enable data rich advocacy in support of community building and collective action for change.">
+  
+
+  <!-- Style Sheets -->
+  <link rel="shortcut icon" type="image/png" sizes="32x32" href="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/img/ec-icon.png"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Poppins:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/css/styles.css">
+
+  
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  
+  
+  <script src="https://rstudio.github.io/leaflet/libs/htmlwidgets/htmlwidgets.js"></script>
+  
+  
+  
+  <script>/* ========================================================================
+    * Bootstrap: tab.js v3.4.1
+    * https://getbootstrap.com/docs/3.4/javascript/#tabs
+    * ========================================================================
+    * Copyright 2011-2019 Twitter, Inc.
+    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+    * ======================================================================== */
+   
+   // Register tab plugin after DOM content loaded in order to
+   // override BS5's plugin
+   // https://github.com/twbs/bootstrap/blob/08139c22/js/dist/tab.js#L87
+   $(function() {
+     'use strict';
+   
+     // TAB CLASS DEFINITION
+     // ====================
+   
+     var Tab = function (element) {
+       // jscs:disable requireDollarBeforejQueryAssignment
+       this.element = $(element)
+       // jscs:enable requireDollarBeforejQueryAssignment
+     }
+   
+     Tab.VERSION = '3.4.1'
+   
+     Tab.TRANSITION_DURATION = 150
+   
+     Tab.prototype.show = function () {
+       var $this    = this.element
+       var $ul      = $this.closest('ul:not(.dropdown-menu)')
+       var selector = $this.data('target')
+   
+       if (!selector) {
+         selector = $this.attr('href')
+         selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
+       }
+   
+       if ($this.parent('li').hasClass('active')) return
+   
+       var $previous = $ul.find('.active:last a')
+       var hideEvent = $.Event('hide.bs.tab', {
+         relatedTarget: $this[0]
+       })
+       var showEvent = $.Event('show.bs.tab', {
+         relatedTarget: $previous[0]
+       })
+   
+       $previous.trigger(hideEvent)
+       $this.trigger(showEvent)
+   
+       if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) return
+   
+       var $target = $(document).find(selector)
+   
+       this.activate($this.closest('li'), $ul)
+       this.activate($target, $target.parent(), function () {
+         $previous.trigger({
+           type: 'hidden.bs.tab',
+           relatedTarget: $this[0]
+         })
+         $this.trigger({
+           type: 'shown.bs.tab',
+           relatedTarget: $previous[0]
+         })
+       })
+     }
+   
+     Tab.prototype.activate = function (element, container, callback) {
+       var $active    = container.find('> .active')
+       var transition = callback
+         && $.support.transition
+         && ($active.length && $active.hasClass('fade') || !!container.find('> .fade').length)
+   
+       function next() {
+         $active
+           .removeClass('active')
+           .find('> .dropdown-menu > .active')
+           .removeClass('active')
+           .end()
+           .find('[data-toggle="tab"]')
+           .attr('aria-expanded', false)
+   
+         element
+           .addClass('active')
+           .find('[data-toggle="tab"]')
+           .attr('aria-expanded', true)
+   
+         if (transition) {
+           element[0].offsetWidth // reflow for transition
+           element.addClass('in')
+         } else {
+           element.removeClass('fade')
+         }
+   
+         if (element.parent('.dropdown-menu').length) {
+           element
+             .closest('li.dropdown')
+             .addClass('active')
+             .end()
+             .find('[data-toggle="tab"]')
+             .attr('aria-expanded', true)
+         }
+   
+         callback && callback()
+       }
+   
+       $active.length && transition ?
+         $active
+           .one('bsTransitionEnd', next)
+           .emulateTransitionEnd(Tab.TRANSITION_DURATION) :
+         next()
+   
+       $active.removeClass('in')
+     }
+   
+   
+     // TAB PLUGIN DEFINITION
+     // =====================
+   
+     function Plugin(option) {
+       return this.each(function () {
+         var $this = $(this)
+         var data  = $this.data('bs.tab')
+   
+         if (!data) $this.data('bs.tab', (data = new Tab(this)))
+         if (typeof option == 'string') data[option]()
+       })
+     }
+   
+     var old = $.fn.tab
+   
+     $.fn.tab             = Plugin
+     $.fn.tab.Constructor = Tab
+   
+   
+     // TAB NO CONFLICT
+     // ===============
+   
+     $.fn.tab.noConflict = function () {
+       $.fn.tab = old
+       return this
+     }
+   
+   
+     // TAB DATA-API
+     // ============
+   
+     var clickHandler = function (e) {
+       e.preventDefault()
+       Plugin.call($(this), 'show')
+     }
+   
+     $(document)
+       .on('click.bs.tab.data-api', '[data-toggle="tab"]', clickHandler)
+       .on('click.bs.tab.data-api', '[data-toggle="pill"]', clickHandler)
+   
+   });
+</script>
+  
+
+  
+
+  
+
+</head>
+<body class="report">
+  <a href="#maincontent" class="visually-hidden focusable skip-link">
+    Skip to main content
+  </a>
+  <header id="topNav" class="nav">
+    <div class="nav-wrap">
+    <nav class="navbar navbar-expand-md" role="navigation" aria-label="main navigation">
+        <!-- <div class="nav-container"> -->
+        <div class="nav-main">
+            <a class="home-page" href="https://virginiaequitycenter.github.io/cville-equity-atlas" title="Charlottesville Regional Equity Atlas">
+            <!-- <a class="site-title navbar-brand" href="https://virginiaequitycenter.github.io/cville-equity-atlas" title="Charlottesville Regional Equity Atlas"> -->
+                <span style="color:#3991D1">Charlottesville&nbsp</span><span style="color:#052F5F">Equity Atlas</span>
+            </a>
+            <!-- Menu expanded -->
+            
+            <!-- <nav id="nav-expanded"> -->
+                
+                <ul class="primary-nav">
+                <!-- <ul class="navbar-nav justify-content-end flex-grow-1"> -->
+                    
+                    
+                    <li>
+                    <!-- <li class="nav-item"> -->
+                        <a class="nav-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas/dashboards/">
+                            Dashboards
+                        </a>
+                    </li>
+                    
+    
+                    
+                    
+                    
+                    <li>
+                    <!-- <li class="nav-item"> -->
+                        <a class="nav-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/">
+                            Reports
+                        </a>
+                    </li>
+                    
+    
+                    
+                    
+                    
+                    <li>
+                    <!-- <li class="nav-item"> -->
+                        <a class="nav-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas/resources/">
+                            Resources
+                        </a>
+                    </li>
+                    
+    
+                    
+                    
+                    
+                    <li>
+                    <!-- <li class="nav-item"> -->
+                        <a class="nav-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas/about/">
+                            About
+                        </a>
+                    </li>
+                    
+    
+                    
+                    
+                </ul>
+                
+            <!-- </nav> -->
+        <!-- Offcanvas nav sidebar -->
+        <a class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="block-mobilemainnav-menu" aria-label="open menu">
+            <span class="navbar-toggler-icon" aria-hidden="true" role="img"></span>
+        </a>
+
+            <div class="offcanvas offcanvas-end offcanvas-navbar" tabindex="-1" id="offcanvas-navbar" aria-labelledby="block-mobilemainnav-menu">
+                <h2 class="visually-hidden" id="block-mobilemainnav-menu">Mobile Main Nav</h2>
+                <div class="offcanvas-header justify-content-end">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="nav flex-column mb-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://virginiaequitycenter.github.io/cville-equity-atlas" title="Charlottesville Regional Equity Atlas">
+                                Equity Atlas Home
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <ul class="nav flex-column mb-auto">
+                        
+                        
+                        <li class="nav-item">
+                            <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/dashboards/" class="nav-link">Dashboards</a>
+                        </li>
+                        
+    
+                        
+            
+                        
+                        
+                        <li class="nav-item">
+                            <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/" class="nav-link">Reports</a>
+                        </li>
+                        
+    
+                        
+            
+                        
+                        
+                        <li class="nav-item">
+                            <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/resources/" class="nav-link">Resources</a>
+                        </li>
+                        
+    
+                        
+            
+                        
+                        
+                        <li class="nav-item">
+                            <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/about/" class="nav-link">About</a>
+                        </li>
+                        
+    
+                        
+            
+                        
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+</header>
+
+
+  <article class="report-content">
+
+    
+    <nav id="breadcrumbs" class="breadcrumb-container">
+    <div class="breadcrumbs">
+        
+        <a href="https://virginiaequitycenter.github.io/cville-equity-atlas">Home</a>
+        
+            
+            / <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/">Reports</a>
+            
+        
+            
+            / Charlottesville and Albemarle School Demographics
+            
+        
+    </div>
+</nav>
+
+    
+
+    <button onclick="topFunction()" id="toTopBtn" title="Go to top">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      viewBox="0 0 20 15" style="enable-background:new 0 0 20 15;" xml:space="preserve">
+        <path d="M20,0H0v15h20V0z M13.3,7.2c-0.4,0.3-0.9,0.3-1.3,0l-1.2-1.2v5c0,0.5-0.4,0.9-0.9,0.9s-0.9-0.4-0.9-0.9v-5L7.9,7.2
+        C7.5,7.6,7,7.5,6.6,7.1C6.4,6.8,6.4,6.3,6.6,6l2.7-2.7c0.4-0.4,0.9-0.4,1.3,0L13.3,6C13.7,6.3,13.7,6.9,13.3,7.2z"/>
+      </svg>
+    </button> 
+
+    <div id="maincontent" class="main-container">
+      <div class="rmd-main">
+
+
+
+
+<header class="rmd-header">
+
+<h1 class="title toc-ignore">Charlottesville and Albemarle School
+Demographics</h1>
+
+
+
+<h3 class="date toc-ignore">Last Updated: March 20, 2023</h3>
+
+
+<hr>
+</header>
+
+
+
+<div id="demographic-tables" class="section level2 tabset tabset-pills">
+<h2 class="tabset tabset-pills">Demographic Tables</h2>
+<p>The tables below provide the demographic composition of
+Charlottesville and Albemarle Schools for 2022-2023, 2021-2022,
+2020-2021, and 2019-2020.</p>
+<p>These numbers reflect Fall Membership numbers provided by the
+Virginia Department of Education’s <a href="https://p1pe.doe.virginia.gov/apex_captcha/home.do?apexTypeId=304">Fall
+Membership Build-a-Table site</a>.</p>
+<p>According to VDOE documentation</p>
+<ul>
+<li>Race or Ethnicity captures “the racial category that most closely
+reflects the student’s recognition of his or her community or with which
+the student identifies”</li>
+<li>Economic status “identifies students as economically disadvantaged
+if they meet any one of the following: 1) is eligible for Free/Reduced
+Meals, or 2) receives TANF, or 3) is eligible for Medicaid, or 4)
+identified as either Migrant or experiencing Homelessness.”</li>
+</ul>
+<p>Scroll further right to see the percent of a school’s student body by
+race and the number and percent of students identified as economically
+disadvantaged. The tables can be sorted by any column by clicking on the
+up/down arrow next to the column name.</p>
+<div id="academic-year" class="section level3">
+<h3>2022-2023 Academic Year</h3>
+<div class="reactable html-widget html-fill-item-overflow-hidden html-fill-item" id="table2022_2023" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="table2022_2023">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"division":["Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Charlottesville","Charlottesville","Charlottesville","Charlottesville","Charlottesville","Charlottesville","Charlottesville","Charlottesville","Charlottesville"],"school":["Agnor-Hurt Elementary","Albemarle High","Baker-Butler Elem","Broadus Wood Elementary","Brownsville Elementary","Community Lab School","Crozet Elementary","Hollymead Elementary","Jackson P. Burley Middle","Joseph T. Henley Middle","Journey Middle","Lakeside Middle","Leslie H. Walton Middle","Mary Carr Greer Elementary","Meriwether Lewis Elementary","Monticello High","Mountain View Elementary","Red Hill Elementary","Scottsville Elementary","Stone Robinson Elementary","Stony Point Elementary","Virginia L. Murray Elementary","Western Albemarle High","Woodbrook Elementary","Buford Middle","Burnley-Moran Elementary","Charlottesville High","Clark Elementary","Greenbrier Elementary","Jackson-Via Elementary","Johnson Elementary","Venable Elementary","Walker Upper Elementary"],"students":[402,1862,655,272,553,173,483,317,538,768,584,475,322,456,331,1148,688,185,209,430,177,262,1120,557,506,249,1222,291,272,288,259,264,529],"count_asian":[30,157,82,6,31,7,17,64,26,28,34,61,6,37,9,37,22,1,0,26,8,27,45,47,33,8,61,33,21,23,10,14,35],"count_black":[88,338,71,6,18,11,7,21,113,18,146,37,26,128,2,151,129,10,26,49,25,10,15,222,177,58,394,110,52,106,110,85,164],"count_latinx":[136,378,115,32,29,22,38,22,152,50,175,61,38,171,21,210,208,30,18,49,16,16,78,148,86,23,193,57,48,41,33,16,90],"count_white":[148,987,384,228,474,132,421,210,246,672,228,316,251,119,299,748,327,144,165,306,128,206,978,140,210,160,571,91,150,118,106,149,240],"count_aian":[0,2,1,0,0,1,0,0,0,0,1,0,0,1,0,1,1,0,0,0,0,1,3,0,0,0,2,0,1,0,0,0,0],"count_nhpi":[0,0,2,0,1,0,0,0,1,0,0,0,1,0,0,1,1,0,0,0,0,2,1,0,0,0,1,0,0,0,0,0,0],"perc_asian":[7.5,8.4,12.5,2.2,5.6,4,3.5,20.2,4.8,3.6,5.8,12.8,1.9,8.1,2.7,3.2,3.2,0.5,0,6,4.5,10.3,4,8.4,6.5,3.2,5,11.3,7.7,8,3.9,5.3,6.6],"perc_black":[21.9,18.2,10.8,2.2,3.3,6.4,1.4,6.6,21,2.3,25,7.8,8.1,28.1,0.6,13.2,18.8,5.4,12.4,11.4,14.1,3.8,1.3,39.9,35,23.3,32.2,37.8,19.1,36.8,42.5,32.2,31],"perc_latinx":[33.8,20.3,17.6,11.8,5.2,12.7,7.9,6.9,28.3,6.5,30,12.8,11.8,37.5,6.3,18.3,30.2,16.2,8.6,11.4,9,6.1,7,26.6,17,9.2,15.8,19.6,17.6,14.2,12.7,6.1,17],"perc_white":[36.8,53,58.6,83.8,85.7,76.3,87.2,66.2,45.7,87.5,39,66.5,78,26.1,90.3,65.2,47.5,77.8,78.9,71.2,72.3,78.6,87.3,25.1,41.5,64.3,46.7,31.3,55.1,41,40.9,56.4,45.4],"count_adv":[235,1336,530,231,491,177,433,290,321,704,306,392,211,237,317,793,403,112,129,322,137,258,1012,260,233,168,701,83,176,131,145,171,279],"count_disadv":[203,662,210,57,100,15,81,62,267,108,328,122,129,258,26,442,349,89,98,151,52,24,151,349,350,121,661,270,139,213,177,135,338],"perc_aian":[0,0.1,0.2,0,0,0.6,0,0,0,0,0.2,0,0,0.2,0,0.1,0.1,0,0,0,0,0.4,0.3,0,0,0,0.2,0,0.4,0,0,0,0],"perc_nhpi":[0,0,0.3,0,0.2,0,0,0,0.2,0,0,0,0.3,0,0,0.1,0.1,0,0,0,0,0.8,0.1,0,0,0,0.1,0,0,0,0,0,0],"perc_adv":[53.7,66.9,71.6,80.2,83.1,92.2,84.2,82.4,54.6,86.7,48.3,76.3,62.1,47.9,92.4,64.2,53.6,55.7,56.8,68.1,72.5,91.5,87,42.7,40,58.1,51.5,23.5,55.9,38.1,45,55.9,45.2],"perc_disadv":[46.3,33.1,28.4,19.8,16.9,7.8,15.8,17.6,45.4,13.3,51.7,23.7,37.9,52.1,7.6,35.8,46.4,44.3,43.2,31.9,27.5,8.5,13,57.3,60,41.9,48.5,76.5,44.1,61.9,55,44.1,54.8]},"columns":[{"id":"division","name":"Division","type":"character","sticky":"left","style":{"background":"#F4E3D3FF"}},{"id":"school","name":"School","type":"character","sticky":"left","style":{"background":"#F4E3D3FF"}},{"id":"students","name":"Students","type":"numeric","sticky":"left","style":{"background":"#F4E3D3FF"}},{"id":"count_asian","name":"Asian","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"count_black","name":"Black","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"count_latinx","name":"Hispanic","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"count_white","name":"White","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"count_aian","name":"Am. Indian AK Native","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"count_nhpi","name":"Native HI Pacific Islander","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"perc_asian","name":"Asian","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"perc_black","name":"Black","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"perc_latinx","name":"Hispanic","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"perc_white","name":"White","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"count_adv","name":"Advantaged","type":"numeric","style":{"background":"#B4D6DB"}},{"id":"count_disadv","name":"Disadvantaged","type":"numeric","style":{"background":"#B4D6DB"}},{"id":"perc_aian","name":"Am. Indian AK Native","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"perc_nhpi","name":"Native HI Pacific Islander","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"perc_adv","name":"Advantaged","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#94C5CCFF"}},{"id":"perc_disadv","name":"Disadvantaged","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#94C5CCFF"}}],"columnGroups":[{"name":"Counts by Racial/Ethnic Identity","columns":["count_aian","count_asian","count_black","count_latinx","count_nhpi","count_white"]},{"name":"Counts by Economic Status","columns":["count_adv","count_disadv"]},{"name":"Percents by Racial/Ethnic Identity","columns":["perc_aian","perc_asian","perc_black","perc_latinx","perc_nhpi","perc_white"]},{"name":"Percents by Economic Status","columns":["perc_adv","perc_disadv"]}],"defaultPageSize":12,"showSortable":true,"elementId":"table2022_2023","dataKey":"71569a6b6b7f0164ccee51a6a58a366d"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<button class="btn btn-default atlas-btn" onclick="Reactable.downloadDataCSV(&#39;table2022_2023&#39;, &#39;table2022_2023.csv&#39;)">Download as CSV</button>
+</div>
+<div id="academic-year-1" class="section level3">
+<h3>2021-2022 Academic Year</h3>
+<div class="reactable html-widget html-fill-item-overflow-hidden html-fill-item" id="table2021_2022" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="table2021_2022">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"division":["Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Charlottesville","Charlottesville","Charlottesville","Charlottesville","Charlottesville","Charlottesville","Charlottesville","Charlottesville","Charlottesville"],"school":["Agnor-Hurt Elementary","Albemarle High","Baker-Butler Elem","Broadus Wood Elementary","Brownsville Elementary","Community Lab School","Crozet Elementary","Hollymead Elementary","Jack Jouett Middle","Jackson P. Burley Middle","Joseph T. Henley Middle","Lakeside Middle","Leslie H. Walton Middle","Mary Carr Greer Elementary","Meriwether Lewis Elementary","Monticello High","Mountain View Elementary","Red Hill Elementary","Scottsville Elementary","Stone Robinson Elementary","Stony Point Elementary","Virginia L. Murray Elementary","Western Albemarle High","Woodbrook Elementary","Buford Middle","Burnley-Moran Elementary","Charlottesville High","Clark Elementary","Greenbrier Elementary","Jackson-Via Elementary","Johnson Elementary","Venable Elementary","Walker Upper Elementary"],"students":[409,1801,614,247,709,178,313,305,640,566,803,501,312,444,310,1133,677,172,200,414,170,244,1118,523,538,282,1135,271,247,281,260,258,561],"count_asian":[32,151,58,2,40,7,7,60,32,27,34,55,4,32,6,34,24,1,0,27,7,21,40,51,31,10,61,26,25,18,5,18,44],"count_black":[99,309,71,7,18,7,3,18,152,123,19,35,30,128,0,136,107,10,28,50,34,13,18,190,221,64,346,115,45,111,116,79,177],"count_latinx":[129,323,107,20,33,23,29,20,169,149,49,59,30,164,22,206,221,30,19,55,16,13,69,140,88,30,170,49,44,34,30,15,93],"count_white":[149,1015,375,218,616,140,273,205,285,266,697,351,248,119,282,754,323,131,153,282,113,194,987,142,198,178,557,81,132,118,109,146,247],"count_aian":[0,3,1,0,1,1,0,1,2,0,2,1,0,1,0,1,1,0,0,0,0,1,3,0,0,0,1,0,1,0,0,0,0],"count_nhpi":[0,0,2,0,1,0,1,1,0,1,2,0,0,0,0,2,1,0,0,0,0,2,1,0,0,0,0,0,0,0,0,0,0],"perc_asian":[7.8,8.4,9.4,0.8,5.6,3.9,2.2,19.7,5,4.8,4.2,11,1.3,7.2,1.9,3,3.5,0.6,0,6.5,4.1,8.6,3.6,9.8,5.8,3.5,5.4,9.6,10.1,6.4,1.9,7,7.8],"perc_black":[24.2,17.2,11.6,2.8,2.5,3.9,1,5.9,23.8,21.7,2.4,7,9.6,28.8,0,12,15.8,5.8,14,12.1,20,5.3,1.6,36.3,41.1,22.7,30.5,42.4,18.2,39.5,44.6,30.6,31.6],"perc_latinx":[31.5,17.9,17.4,8.1,4.7,12.9,9.3,6.6,26.4,26.3,6.1,11.8,9.6,36.9,7.1,18.2,32.6,17.4,9.5,13.3,9.4,5.3,6.2,26.8,16.4,10.6,15,18.1,17.8,12.1,11.5,5.8,16.6],"perc_white":[36.4,56.4,61.1,88.3,86.9,78.7,87.2,67.2,44.5,47,86.8,70.1,79.5,26.8,91,66.5,47.7,76.2,76.5,68.1,66.5,79.5,88.3,27.2,36.8,63.1,49.1,29.9,53.4,42,41.9,56.6,44],"count_adv":[229,1393,520,216,657,185,266,300,384,368,725,443,225,223,298,841,453,107,117,354,133,244,1024,261,241,220,664,150,179,169,205,208,249],"count_disadv":[227,524,162,43,99,9,59,42,310,232,117,105,106,258,23,379,278,82,99,116,55,24,133,301,358,102,569,174,103,156,94,75,374],"perc_aian":[0,0.2,0.2,0,0.1,0.6,0,0.3,0.3,0,0.2,0.2,0,0.2,0,0.1,0.1,0,0,0,0,0.4,0.3,0,0,0,0.1,0,0.4,0,0,0,0],"perc_nhpi":[0,0,0.3,0,0.1,0,0.3,0.3,0,0.2,0.2,0,0,0,0,0.2,0.1,0,0,0,0,0.8,0.1,0,0,0,0,0,0,0,0,0,0],"perc_adv":[50.2,72.7,76.2,83.4,86.9,95.4,81.8,87.7,55.3,61.3,86.1,80.8,68,46.4,92.8,68.9,62,56.6,54.2,75.3,70.7,91,88.5,46.4,40.2,68.3,53.9,46.3,63.5,52,68.6,73.5,40],"perc_disadv":[49.8,27.3,23.8,16.6,13.1,4.6,18.2,12.3,44.7,38.7,13.9,19.2,32,53.6,7.2,31.1,38,43.4,45.8,24.7,29.3,9,11.5,53.6,59.8,31.7,46.1,53.7,36.5,48,31.4,26.5,60]},"columns":[{"id":"division","name":"Division","type":"character","sticky":"left","style":{"background":"#F4E3D3FF"}},{"id":"school","name":"School","type":"character","sticky":"left","style":{"background":"#F4E3D3FF"}},{"id":"students","name":"Students","type":"numeric","sticky":"left","style":{"background":"#F4E3D3FF"}},{"id":"count_asian","name":"Asian","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"count_black","name":"Black","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"count_latinx","name":"Hispanic","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"count_white","name":"White","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"count_aian","name":"Am. Indian AK Native","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"count_nhpi","name":"Native HI Pacific Islander","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"perc_asian","name":"Asian","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"perc_black","name":"Black","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"perc_latinx","name":"Hispanic","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"perc_white","name":"White","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"count_adv","name":"Advantaged","type":"numeric","style":{"background":"#B4D6DB"}},{"id":"count_disadv","name":"Disadvantaged","type":"numeric","style":{"background":"#B4D6DB"}},{"id":"perc_aian","name":"Am. Indian AK Native","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"perc_nhpi","name":"Native HI Pacific Islander","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"perc_adv","name":"Advantaged","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#94C5CCFF"}},{"id":"perc_disadv","name":"Disadvantaged","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#94C5CCFF"}}],"columnGroups":[{"name":"Counts by Racial/Ethnic Identity","columns":["count_aian","count_asian","count_black","count_latinx","count_nhpi","count_white"]},{"name":"Counts by Economic Status","columns":["count_adv","count_disadv"]},{"name":"Percents by Racial/Ethnic Identity","columns":["perc_aian","perc_asian","perc_black","perc_latinx","perc_nhpi","perc_white"]},{"name":"Percents by Economic Status","columns":["perc_adv","perc_disadv"]}],"defaultPageSize":12,"showSortable":true,"elementId":"table2021_2022","dataKey":"d6a06b94b2a5a269b66fd852ac468122"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<button class="btn btn-default atlas-btn" onclick="Reactable.downloadDataCSV(&#39;table2021_2022&#39;, &#39;table2021_2022.csv&#39;)">Download as CSV</button>
+</div>
+<div id="academic-year-2" class="section level3">
+<h3>2020-2021 Academic Year</h3>
+<div class="reactable html-widget html-fill-item-overflow-hidden html-fill-item" id="table2020_2021" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="table2020_2021">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"division":["Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Charlottesville","Charlottesville","Charlottesville","Charlottesville","Charlottesville","Charlottesville","Charlottesville","Charlottesville","Charlottesville"],"school":["Agnor-Hurt Elementary","Albemarle High","Baker-Butler Elem","Broadus Wood Elementary","Brownsville Elementary","Crozet Elementary","Hollymead Elementary","Jack Jouett Middle","Jackson P. Burley Middle","Joseph T. Henley Middle","Leslie H. Walton Middle","Mary Carr Greer Elementary","Meriwether Lewis Elementary","Monticello High","Mortimer Y. Sutherland Middle","Mountain View Elementary","Murray School","Red Hill Elementary","Scottsville Elementary","Stone Robinson Elementary","Stony Point Elementary","Virginia L. Murray Elementary","Western Albemarle High","Woodbrook Elementary","Buford Middle","Burnley-Moran Elementary","Charlottesville High","Clark Elementary","Greenbrier Elementary","Jackson-Via Elementary","Johnson Elementary","Venable Elementary","Walker Upper Elementary"],"students":[381,1776,578,238,690,312,316,632,576,853,322,434,314,1115,543,632,143,158,212,411,155,213,1110,533,556,286,1113,248,278,289,279,251,567],"count_asian":[26,153,46,2,34,5,74,38,33,46,1,33,6,37,52,23,6,3,1,29,7,17,35,56,33,11,72,16,36,14,10,24,37],"count_black":[96,294,57,6,19,5,12,147,103,21,31,125,1,149,48,98,5,9,26,43,29,6,18,177,228,76,342,117,57,135,114,74,217],"count_latinx":[112,296,98,14,36,24,20,185,141,50,30,156,24,190,60,232,14,25,21,55,25,14,57,136,91,33,163,45,46,40,44,15,83],"count_nhpi":[1,1,0,0,0,2,0,1,1,1,1,1,0,0,0,1,0,0,0,0,0,3,1,0,0,0,0,0,0,0,0,0,0],"count_white":[146,1030,377,216,600,276,209,260,298,732,259,119,283,738,381,278,116,121,164,283,94,172,998,164,204,166,535,70,138,99,111,138,230],"count_aian":[0,2,0,0,1,0,1,1,0,3,0,0,0,1,2,0,2,0,0,1,0,1,1,0,0,0,1,0,1,1,0,0,0],"perc_asian":[6.8,8.6,8,0.8,4.9,1.6,23.4,6,5.7,5.4,0.3,7.6,1.9,3.3,9.6,3.6,4.2,1.9,0.5,7.1,4.5,8,3.2,10.5,5.9,3.8,6.5,6.5,12.9,4.8,3.6,9.6,6.5],"perc_black":[25.2,16.6,9.9,2.5,2.8,1.6,3.8,23.3,17.9,2.5,9.6,28.8,0.3,13.4,8.8,15.5,3.5,5.7,12.3,10.5,18.7,2.8,1.6,33.2,41,26.6,30.7,47.2,20.5,46.7,40.9,29.5,38.3],"perc_latinx":[29.4,16.7,17,5.9,5.2,7.7,6.3,29.3,24.5,5.9,9.3,35.9,7.6,17,11,36.7,9.8,15.8,9.9,13.4,16.1,6.6,5.1,25.5,16.4,11.5,14.6,18.1,16.5,13.8,15.8,6,14.6],"perc_nhpi":[0.3,0.1,0,0,0,0.6,0,0.2,0.2,0.1,0.3,0.2,0,0,0,0.2,0,0,0,0,0,1.4,0.1,0,0,0,0,0,0,0,0,0,0],"perc_white":[38.3,58,65.2,90.8,87,88.5,66.1,41.1,51.7,85.8,80.4,27.4,90.1,66.2,70.2,44,81.1,76.6,77.4,68.9,60.6,80.8,89.9,30.8,36.7,58,48.1,28.2,49.6,34.3,39.8,55,40.6],"count_adv":[229,1246,467,210,629,248,303,286,338,734,204,172,292,780,461,406,126,87,122,324,118,216,1003,244,280,198,709,98,186,149,196,184,305],"count_disadv":[203,647,170,42,100,80,46,395,271,150,143,297,31,417,123,288,36,82,100,126,55,19,141,325,313,120,488,189,132,182,114,92,323],"perc_aian":[0,0.1,0,0,0.1,0,0.3,0.2,0,0.4,0,0,0,0.1,0.4,0,1.4,0,0,0.2,0,0.5,0.1,0,0,0,0.1,0,0.4,0.3,0,0,0],"perc_adv":[53,65.8,73.3,83.3,86.3,75.6,86.8,42,55.5,83,58.8,36.7,90.4,65.2,78.9,58.5,77.8,51.5,55,72,68.2,91.9,87.7,42.9,47.2,62.3,59.2,34.1,58.5,45,63.2,66.7,48.6],"perc_disadv":[47,34.2,26.7,16.7,13.7,24.4,13.2,58,44.5,17,41.2,63.3,9.6,34.8,21.1,41.5,22.2,48.5,45,28,31.8,8.1,12.3,57.1,52.8,37.7,40.8,65.9,41.5,55,36.8,33.3,51.4]},"columns":[{"id":"division","name":"Division","type":"character","sticky":"left","style":{"background":"#F4E3D3FF"}},{"id":"school","name":"School","type":"character","sticky":"left","style":{"background":"#F4E3D3FF"}},{"id":"students","name":"Students","type":"numeric","sticky":"left","style":{"background":"#F4E3D3FF"}},{"id":"count_asian","name":"Asian","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"count_black","name":"Black","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"count_latinx","name":"Hispanic","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"count_nhpi","name":"Native HI Pacific Islander","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"count_white","name":"White","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"count_aian","name":"Am. Indian AK Native","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"perc_asian","name":"Asian","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"perc_black","name":"Black","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"perc_latinx","name":"Hispanic","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"perc_nhpi","name":"Native HI Pacific Islander","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"perc_white","name":"White","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"count_adv","name":"Advantaged","type":"numeric","style":{"background":"#B4D6DB"}},{"id":"count_disadv","name":"Disadvantaged","type":"numeric","style":{"background":"#B4D6DB"}},{"id":"perc_aian","name":"Am. Indian AK Native","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"perc_adv","name":"Advantaged","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#94C5CCFF"}},{"id":"perc_disadv","name":"Disadvantaged","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#94C5CCFF"}}],"columnGroups":[{"name":"Counts by Racial/Ethnic Identity","columns":["count_aian","count_asian","count_black","count_latinx","count_nhpi","count_white"]},{"name":"Counts by Economic Status","columns":["count_adv","count_disadv"]},{"name":"Percents by Racial/Ethnic Identity","columns":["perc_aian","perc_asian","perc_black","perc_latinx","perc_nhpi","perc_white"]},{"name":"Percents by Economic Status","columns":["perc_adv","perc_disadv"]}],"defaultPageSize":13,"showSortable":true,"elementId":"table2020_2021","dataKey":"29f182d3fbc6763832c25a680a031751"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<button class="btn btn-default atlas-btn" onclick="Reactable.downloadDataCSV(&#39;table2020_2021&#39;, &#39;table2020_2021.csv&#39;)">Download as CSV</button>
+</div>
+<div id="academic-year-3" class="section level3">
+<h3>2019-2020 Academic Year</h3>
+<div class="reactable html-widget html-fill-item-overflow-hidden html-fill-item" id="table2019_2020" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="table2019_2020">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"division":["Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Albemarle","Charlottesville","Charlottesville","Charlottesville","Charlottesville","Charlottesville","Charlottesville","Charlottesville","Charlottesville","Charlottesville"],"school":["Agnor-Hurt Elementary","Albemarle County Community Public Charter","Albemarle High","Baker-Butler Elem","Broadus Wood Elementary","Brownsville Elementary","Crozet Elementary","Hollymead Elementary","Jack Jouett Middle","Jackson P. Burley Middle","Joseph T. Henley Middle","Leslie H. Walton Middle","Mary Carr Greer Elementary","Meriwether Lewis Elementary","Monticello High","Mortimer Y. Sutherland Middle","Murray High","Paul H. Cale Elementary","Red Hill Elementary","Scottsville Elementary","Stone Robinson Elementary","Stony Point Elementary","Virginia L. Murray Elementary","Western Albemarle High","Woodbrook Elementary","Buford Middle","Burnley-Moran Elementary","Charlottesville High","Clark Elementary","Greenbrier Elementary","Jackson-Via Elementary","Johnson Elementary","Venable Elementary","Walker Upper Elementary"],"students":[423,49,1841,628,271,811,330,391,611,564,884,321,488,388,1134,565,77,708,200,221,467,208,231,1164,546,493,349,1144,274,328,303,320,321,613],"count_asian":[17,0,159,44,0,38,7,77,33,26,34,4,37,8,37,54,3,20,3,0,33,8,16,29,52,28,14,68,26,47,14,11,30,42],"count_black":[105,1,308,62,9,23,6,21,138,102,17,34,150,2,136,57,4,89,13,24,40,31,7,22,185,187,85,350,112,58,144,129,77,256],"count_latinx":[118,5,286,98,14,36,22,25,163,128,52,33,154,22,187,66,6,250,28,17,45,35,13,61,146,86,48,156,40,45,44,46,16,90],"count_nhpi":[1,0,1,0,0,2,2,0,0,0,2,1,2,0,0,0,0,1,0,0,1,0,2,1,0,0,0,0,0,0,0,0,0,0],"count_white":[182,42,1085,424,248,712,293,266,276,308,777,249,145,356,773,385,63,348,155,180,347,134,192,1050,163,192,202,569,96,178,100,134,198,225],"count_aian":[0,1,2,0,0,0,0,2,1,0,2,0,0,0,1,3,1,0,1,0,1,0,1,1,0,0,0,1,0,0,1,0,0,0],"perc_asian":[4,0,8.6,7,0,4.7,2.1,19.7,5.4,4.6,3.8,1.2,7.6,2.1,3.3,9.6,3.9,2.8,1.5,0,7.1,3.8,6.9,2.5,9.5,5.7,4,5.9,9.5,14.3,4.6,3.4,9.3,6.9],"perc_black":[24.8,2,16.7,9.9,3.3,2.8,1.8,5.4,22.6,18.1,1.9,10.6,30.7,0.5,12,10.1,5.2,12.6,6.5,10.9,8.6,14.9,3,1.9,33.9,37.9,24.4,30.6,40.9,17.7,47.5,40.3,24,41.8],"perc_latinx":[27.9,10.2,15.5,15.6,5.2,4.4,6.7,6.4,26.7,22.7,5.9,10.3,31.6,5.7,16.5,11.7,7.8,35.3,14,7.7,9.6,16.8,5.6,5.2,26.7,17.4,13.8,13.6,14.6,13.7,14.5,14.4,5,14.7],"perc_nhpi":[0.2,0,0.1,0,0,0.2,0.6,0,0,0,0.2,0.3,0.4,0,0,0,0,0.1,0,0,0.2,0,0.9,0.1,0,0,0,0,0,0,0,0,0,0],"perc_white":[43,85.7,58.9,67.5,91.5,87.8,88.8,68,45.2,54.6,87.9,77.6,29.7,91.8,68.2,68.1,81.8,49.2,77.5,81.4,74.3,64.4,83.1,90.2,29.9,38.9,57.9,49.7,35,54.3,33,41.9,61.7,36.7],"count_adv":[238,46,1408,512,246,768,263,373,294,354,798,206,153,362,860,481,67,453,101,130,369,161,238,1080,227,263,224,759,135,218,183,235,242,302],"count_disadv":[237,10,554,172,41,93,79,56,361,234,121,139,369,42,357,117,18,317,113,103,139,77,18,127,353,267,153,466,181,159,160,124,104,369],"perc_aian":[0,2,0.1,0,0,0,0,0.5,0.2,0,0.2,0,0,0,0.1,0.5,1.3,0,0.5,0,0.2,0,0.4,0.1,0,0,0,0.1,0,0,0.3,0,0,0],"perc_adv":[50.1,82.1,71.8,74.9,85.7,89.2,76.9,86.9,44.9,60.2,86.8,59.7,29.3,89.6,70.7,80.4,78.8,58.8,47.2,55.8,72.6,67.6,93,89.5,39.1,49.6,59.4,62,42.7,57.8,53.4,65.5,69.9,45],"perc_disadv":[49.9,17.9,28.2,25.1,14.3,10.8,23.1,13.1,55.1,39.8,13.2,40.3,70.7,10.4,29.3,19.6,21.2,41.2,52.8,44.2,27.4,32.4,7,10.5,60.9,50.4,40.6,38,57.3,42.2,46.6,34.5,30.1,55]},"columns":[{"id":"division","name":"Division","type":"character","sticky":"left","style":{"background":"#F4E3D3FF"}},{"id":"school","name":"School","type":"character","sticky":"left","style":{"background":"#F4E3D3FF"}},{"id":"students","name":"Students","type":"numeric","sticky":"left","style":{"background":"#F4E3D3FF"}},{"id":"count_asian","name":"Asian","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"count_black","name":"Black","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"count_latinx","name":"Hispanic","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"count_nhpi","name":"Native HI Pacific Islander","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"count_white","name":"White","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"count_aian","name":"Am. Indian AK Native","type":"numeric","style":{"background":"#C5CCD2"}},{"id":"perc_asian","name":"Asian","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"perc_black","name":"Black","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"perc_latinx","name":"Hispanic","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"perc_nhpi","name":"Native HI Pacific Islander","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"perc_white","name":"White","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"count_adv","name":"Advantaged","type":"numeric","style":{"background":"#B4D6DB"}},{"id":"count_disadv","name":"Disadvantaged","type":"numeric","style":{"background":"#B4D6DB"}},{"id":"perc_aian","name":"Am. Indian AK Native","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#ADB7C0FF"}},{"id":"perc_adv","name":"Advantaged","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#94C5CCFF"}},{"id":"perc_disadv","name":"Disadvantaged","type":"numeric","format":{"cell":{"suffix":"%"},"aggregated":{"suffix":"%"}},"style":{"background":"#94C5CCFF"}}],"columnGroups":[{"name":"Counts by Racial/Ethnic Identity","columns":["count_aian","count_asian","count_black","count_latinx","count_nhpi","count_white"]},{"name":"Counts by Economic Status","columns":["count_adv","count_disadv"]},{"name":"Percents by Racial/Ethnic Identity","columns":["perc_aian","perc_asian","perc_black","perc_latinx","perc_nhpi","perc_white"]},{"name":"Percents by Economic Status","columns":["perc_adv","perc_disadv"]}],"defaultPageSize":13,"showSortable":true,"elementId":"table2019_2020","dataKey":"8d4825e710dcb3c15b5800f4f19fb37c"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<button class="btn btn-default atlas-btn" onclick="Reactable.downloadDataCSV(&#39;table2019_2020&#39;, &#39;table2019_2020.csv&#39;)">Download as CSV</button>
+</div>
+</div>
+<div id="citation" class="section level2">
+<h2>Citation</h2>
+<p>Michele Claibourn, Nina Schoonover, and Elizabeth Mitchell. March
+2023. “Charlottesville and Albemarle School Demographics.” UVA Democracy
+Initiative Center for the Redress of Inequity through Community-Engaged
+Scholarship. <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/school-composition/" class="uri">https://virginiaequitycenter.github.io/cville-equity-atlas/reports/school-composition/</a>.</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+
+
+
+
+
+    </div>
+
+  </article>
+
+  <footer>
+    <div class="footer-wrapper">
+        <section class="footer-menu">
+            <nav>
+                
+                <ul class="footer-nav">
+                    
+                    <li>
+                        <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/dashboards/">
+                            Dashboards
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/reports/">
+                            Reports
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/resources/">
+                            Resources
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://virginiaequitycenter.github.io/cville-equity-atlas/about/">
+                            About
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </nav>
+        </section>
+        <section class="footer-contact">
+            <a class="footer-link" href="https://virginiaequitycenter.org/" target="_blank">
+                <img src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/img/EC-Logo-Web-Grey.png" height="22" width="192" class="footer-logo" alt="The Equity Center">
+            </a>
+        </section>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous" async></script>
+<script>
+  let toTopButton = document.getElementById("toTopBtn");
+  let topnav = document.getElementById("topNav")
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+      toTopButton.style.display = "block";
+      topnav.classList.add('hidden');
+      // topnav.style.marginTop = ""
+    } else {
+      toTopButton.style.display = "none";
+      topnav.classList.remove('hidden')
+    }
+  }
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+
+
+
+
+<script src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/js/reactable/core-js-2.5.3/shim.min.js"></script>
+<script src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/js/reactable/react-17.0.0/react.min.js"></script>
+<script src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/js/reactable/react-17.0.0/react-dom.min.js"></script>
+<script src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/js/reactable/reactwidget-1.0.0/react-tools.js"></script>
+<link href="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/js/reactable/reactable-0.4.4/reactable.css" rel="stylesheet" />
+<script src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/js/reactable/reactable-binding-0.4.4/reactable.js"></script>
+
+
+
+
+
+<script src="https://virginiaequitycenter.github.io/cville-equity-atlas/assets/js/navigation-1.1/tabsets.js"></script>
+<script>
+  $(document).ready(function () {
+    window.buildTabsets("TOC");
+  });
+  
+  $(document).ready(function () {
+    $('.tabset-dropdown > .nav-tabs > li').click(function () {
+      $(this).parent().toggleClass('nav-tabs-open');
+    });
+  });
+</script>
+
+
+</body>
+</html>
