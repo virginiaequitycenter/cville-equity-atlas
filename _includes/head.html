@@ -70,7 +70,7 @@
   <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
   {% endif %}
   {% if page.plotly or page.leaflet or page.reactable or page.tippy %}
-  <script src="https://rstudio.github.io/leaflet/libs/htmlwidgets/htmlwidgets.js"></script>
+  <script src="{{ "/assets/js/htmlwidgets-1.6.1/htmlwidgets.js" | prepend: site.url }}"></script>
   {% endif %}
   
   {% if page.tabset %}
@@ -78,7 +78,6 @@
   {% endif %}
 
   {% if page.toc-float %}
-<!-- <script src="{{ "/assets/js/toc/jquery-3.6.0/jquery-3.6.0.min.js" | prepend: site.url }}"></script> -->
 <script src="{{ "/assets/js/toc/jqueryui-1.11.4/jquery-ui.min.js" | prepend: site.url }}"></script>
 <!-- <link href="{{ "/assets/js/toc/tocify-1.9.1/jquery.tocify.css" | prepend: site.url }}" rel="stylesheet" /> -->
 <script src="{{ "/assets/js/toc/tocify-1.9.1/jquery.tocify.js" | prepend: site.url }}"></script>
