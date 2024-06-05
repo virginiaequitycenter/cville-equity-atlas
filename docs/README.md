@@ -6,9 +6,9 @@
 2. [Working with Jekyll](#working-with-jekyll)
 3. [Site structure](#site-structure)
 4. [Working with the site locally](#working-with-the-site-locally)
-5. [Authoring and editing site content](#authoring-and-editing-site-content)
-6. [Using R Markdown documents](#using-r-markdown-documents)
-7. [Embed R Shiny apps](#embed-r-shiny-apps)
+5. [Writing and editing site content](#writing-and-editing-site-content)
+   6. [Using R Markdown documents](#using-r-markdown-documents)
+   7. [Embed R Shiny apps](#embed-r-shiny-apps)
 8. [Publishing updates](#publishing-updates)
 
 ## Site Basics
@@ -98,19 +98,21 @@ To stop the local server, press `ctrl c` into your terminal.
 
 ## Writing and editing site content
 
-See more details on how to write and edit page content, understanding front matter, page layouts and content in the [_includes](https://github.com/virginiaequitycenter/cville-equity-atlas/tree/main/_includes) directory:
+See more details on how to write and edit page content, front matter, and page layouts:
 
 [Writing and editing pages]()
 
-## Using R Markdown documents
+### Using R Markdown documents
 
-   * The Equity Atlas publishes reports initally created using R Markdown documents with a number of commonly used R packages.  
-   * There is a specific workflow and considerations for creating a report page on the Atlas site, see the steps documented [here]().
+The Equity Atlas publishes reports initally created using R Markdown documents with a number of commonly used R packages.  
 
-## Embed R Shiny apps
+There is a specific workflow and considerations for creating a report page on the Atlas site, see the steps documented [here]().
 
-   * The Equity Atlas also embeds R shiny applications, using the `<iframe>` tag. See an [example page](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/pages/dashboards/cville-equity-dashboard.html).
-   * To create a new page with embedded content, copy the above html file and update the front matter and iframe src URL.
+### Embed R Shiny apps
+
+The Equity Atlas also embeds R shiny applications, using the `<iframe>` tag. See an [example page](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/pages/dashboards/cville-equity-dashboard.html).
+
+   * To create a new page with embedded content, copy the above html file and update the front matter and `<iframe>` src URL.
 
 ## Publishing updates
 
