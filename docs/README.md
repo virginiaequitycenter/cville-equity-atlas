@@ -7,8 +7,8 @@
 3. [Site structure](#site-structure)
 4. [Working with the site locally](#working-with-the-site-locally)
 5. [Writing and editing site content](#writing-and-editing-site-content)
-   6. [Using R Markdown documents](#using-r-markdown-documents)
-   7. [Embed R Shiny apps](#embed-r-shiny-apps)
+   - [Using R Markdown documents](#using-r-markdown-documents)
+   - [Embed R Shiny apps](#embed-r-shiny-apps)
 8. [Publishing updates](#publishing-updates)
 
 ## Site Basics
@@ -106,7 +106,7 @@ See more details on how to write and edit page content, front matter, and page l
 
 The Equity Atlas publishes reports initally created using R Markdown documents with a number of commonly used R packages.  
 
-There is a specific workflow and considerations for creating a report page on the Atlas site, see the steps documented [here]().
+   * There is a specific workflow and considerations for creating a report page on the Atlas site, see the steps documented [here]().
 
 ### Embed R Shiny apps
 
