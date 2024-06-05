@@ -1,0 +1,53 @@
+@media print {
+    /* All your print styles go here */
+    header #topNav,
+    footer,
+    nav,
+    button#toTopBtn {
+      display: none !important;
+    }
+
+    body {
+        font-size: 14px;
+        background-color: none !important; 
+        overflow: visible !important;
+      }
+
+    blockquote, p {
+        font-size: 14px !important;
+    }
+
+    h1 {font-size: 24px !important;}
+
+    h2 {
+        font-size: 20px !important;
+    }
+
+    h3 {
+        font-size: 18px !important;
+    }
+
+    h4, h5, h6 {
+        font-size: 16px !important;
+    }
+
+    .html-widget {
+        page-break-inside: avoid;
+        // page-break-before: always;
+    }
+
+    img {
+        page-break-inside: avoid;
+        display: inline !important;
+        // page-break-before: always;
+    }
+
+    span.logo-span {
+        max-height: 50px;
+    }
+    span.logo-span img {
+        max-height: 40px;
+    }
+
+  }
+  
