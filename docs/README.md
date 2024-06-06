@@ -7,6 +7,7 @@
 3. [Site structure](#site-structure)
 4. [Working with the site locally](#working-with-the-site-locally)
 5. [Writing and editing site content](#writing-and-editing-site-content)
+   - [Jekyll page content basics](#jekyll-page-content-basics)
    - [Using R Markdown documents](#using-r-markdown-documents)
    - [Embed R Shiny apps](#embed-r-shiny-apps)
 8. [Publishing updates](#publishing-updates)
@@ -29,7 +30,7 @@ The Equity Atlas site follows the directory structure of a [Jekyll site](https:/
 
 **[/_data](https://github.com/virginiaequitycenter/cville-equity-atlas/tree/main/_data):** This folder contains data files needed to run the site. Currently it includes [navbar.yml](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/_data/navbar.yml) that provides the data for the site's primary navigation.
 
-**[/_includes](https://github.com/virginiaequitycenter/cville-equity-atlas/tree/main/_includes):** This folder contains partial html files that are re-used throughout the site. This includes the content for site basics like the head metadata, header, footer, and navbar, as well as partials specific to implementing html/js for R packages used in reports. This includes leaflet, plotly, reactable, tabsets, and floating TOC. 
+**[/_includes](https://github.com/virginiaequitycenter/cville-equity-atlas/tree/main/_includes):** This folder contains partial html files that are re-used throughout the site. This includes the content for site basics like the head metadata, header, footer, and navbar, as well as partials specific to implementing CSS/JS for some R packages used in reports. This includes leaflet, plotly, reactable, tabsets, and floating TOC. 
 
 **[/_layouts](https://github.com/virginiaequitycenter/cville-equity-atlas/tree/main/_layouts):** This folder includes page templates for the site. Currently included are:
   * [default.html](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/_layouts/default.html): This is the default page template, and is currently used for the home page (index.html) as well as pages with embedded R Shiny apps.
@@ -41,7 +42,7 @@ The Equity Atlas site follows the directory structure of a [Jekyll site](https:/
   * [/img](https://github.com/virginiaequitycenter/cville-equity-atlas/tree/main/assets/img): All image files for the site
   * [/js](https://github.com/virginiaequitycenter/cville-equity-atlas/tree/main/assets/js): Javascript files for RMD produced reports
 
-**[/docs](https://github.com/virginiaequitycenter/cville-equity-atlas/tree/main/docs):** This folder includes the documentation for the site, as well as the two custom template file options for incorporating an R Markdown document into the Atlas: [external-rmd-template.html](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/docs/external-rmd-template.html) and [atlas-rmd-template.html](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/docs/atlas-rmd-template.html).
+**[/docs](https://github.com/virginiaequitycenter/cville-equity-atlas/tree/main/docs):** This folder includes the documentation for the site, as well as the two custom template options for incorporating an R Markdown document into the Atlas: [external-rmd-template.html](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/docs/external-rmd-template.html) and [atlas-rmd-template.html](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/docs/atlas-rmd-template.html). See [Using R Markdown documents](#using-r-markdown-documents) for more on using these templates.
 
 **[/pages](https://github.com/virginiaequitycenter/cville-equity-atlas/tree/main/pages):** This folder holds the site's content, organized as follows:
   * [/dashboards](https://github.com/virginiaequitycenter/cville-equity-atlas/tree/main/pages/dashboards)
@@ -72,29 +73,29 @@ These steps are only necessary for the first time you run this project locally. 
 
 2. Clone this Git repository:
 
-```bash
-git clone https://github.com/virginiaequitycenter/cville-equity-atlas.git
-```
+  ```bash
+  git clone https://github.com/virginiaequitycenter/cville-equity-atlas.git
+  ```
 
 3. Change directory into the project folder:
 
-```bash
-cd cville-equity-atlas
-```
+  ```bash
+  cd cville-equity-atlas
+  ```
 
 4. To install all the necessary gems specified in the `Gemfile.lock`, run Bundler:
 
-```bash
-bundle install
-```
+  ```bash
+  bundle install
+  ```
 
 *Start here for all future project work*
 
 5. To build and serve the site locally, run:
 
-```bash
-bundle exec jekyll serve
-```
+  ```bash
+  bundle exec jekyll serve
+  ```
 
 The site should build and be accessible at [http://localhost:4000](http://localhost:4000).
 
@@ -102,9 +103,33 @@ To stop the local server, press `ctrl c` into your terminal.
 
 ## Writing and editing site content
 
-See more details on how to write and edit page content, front matter, and page layouts:
+### Jekyll page content basics
 
-[Writing and editing pages]()
+Site pages can be written as an HTML or Markdown (`.md`) file. Every page requires a YAML [front matter](https://jekyllrb.com/docs/front-matter/) block that is used by Jekyll to process the page for production.
+
+The front matter must be at the top of the file, starting on line 1. Pages included in the Equity Atlas require variables for `layout`, `title`, and `permalink`. See the Climate Dashboard page front matter:
+
+```bash
+---
+layout: default
+title: Charlottesville Regional Climate Equity Dashboard
+permalink: /dashboards/climate-dashboard/
+---
+```
+
+This site also has custom variables that can be set when specific JS files are required for report pages generated in RStudio. For example, the incorporated Albemarle Equity Profile page requires JS for leaflet, plotly, reactable, and the floating table of contents:
+
+```bash
+---
+layout: report
+title: Albemarle County Equity Profile
+permalink: /reports/albemarle-equity-profile/
+leaflet: true
+plotly: true
+reactable: true
+toc-float: true
+---
+```
 
 ### Using R Markdown documents
 
