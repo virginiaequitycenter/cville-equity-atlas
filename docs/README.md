@@ -41,7 +41,7 @@ The Equity Atlas site follows the directory structure of a [Jekyll site](https:/
   * [/img](https://github.com/virginiaequitycenter/cville-equity-atlas/tree/main/assets/img): All image files for the site
   * [/js](https://github.com/virginiaequitycenter/cville-equity-atlas/tree/main/assets/js): Javascript files for RMD produced reports
 
-**[/docs](https://github.com/virginiaequitycenter/cville-equity-atlas/tree/main/docs):** This folder includes the documentation for the site, as well as the needed template file for the workflow from R to Jekyll ([atlas-rmd-template.html](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/docs/atlas-rmd-template.html))
+**[/docs](https://github.com/virginiaequitycenter/cville-equity-atlas/tree/main/docs):** This folder includes the documentation for the site, as well as the two custom template file options for incorporating an R Markdown document into the Atlas: [external-rmd-template.html](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/docs/external-rmd-template.html) and [atlas-rmd-template.html](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/docs/atlas-rmd-template.html).
 
 **[/pages](https://github.com/virginiaequitycenter/cville-equity-atlas/tree/main/pages):** This folder holds the site's content, organized as follows:
   * [/dashboards](https://github.com/virginiaequitycenter/cville-equity-atlas/tree/main/pages/dashboards)
@@ -66,6 +66,8 @@ The Equity Atlas site follows the directory structure of a [Jekyll site](https:/
 
 If needed, review documentation on [working with the Github repo and command line](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/docs/command-line.md) before installing Jekyll and working with the site locally.
 
+These steps are only necessary for the first time you run this project locally. For future work, skip to step 5.
+
 1. Install Jekyll and check other prerequisites following their documentation: [Jekyll Quickstart Guide](https://jekyllrb.com/docs/). Please see me if you'd like assistence with this step.
 
 2. Clone this Git repository:
@@ -86,6 +88,8 @@ cd cville-equity-atlas
 bundle install
 ```
 
+*Start here for all future project work*
+
 5. To build and serve the site locally, run:
 
 ```bash
@@ -104,9 +108,25 @@ See more details on how to write and edit page content, front matter, and page l
 
 ### Using R Markdown documents
 
-The Equity Atlas publishes reports initally created using R Markdown documents with a number of commonly used R packages.  
+There are two options for including reports initially created in RStudio using R Markdown documents:
 
-   * There is a specific workflow and considerations for creating a report page on the Atlas site, see the steps documented [here]().
+The simplest option is to use the [external-rmd-template.html](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/docs/external-rmd-template.html) included in this directory. This HTML template file can be used to convert an R Markdown document to HTML in RStudio that incorporates the styling, header, and footer that ties it to the Equity Atlas. An example if this can be seen in the [Charlottesville Urban Heat Islands Report](https://virginiaequitycenter.github.io/Cville-Heat/cville-heat-report.html).
+
+To use this template:
+   
+  1. Download the [external-rmd-template.html](https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/docs/external-rmd-template.html) file to your R project directory. This must be in the same location as your R Markdown document.
+
+  2. In the YAML frontmatter of your R Markdown document, include the [custom template](https://bookdown.org/yihui/rmarkdown-cookbook/html-template.html) option for `output`:
+
+  ```bash
+  output:
+    html_document:
+      template: external-rmd-template.html
+  ```
+
+  3. The resulting HTML file can be linked to in the Equity Atlas. Make sure [Github pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) is activated for the remote repository of your R project, then copy/paste the link to the HTML report into the appropriate page in the Atlas. 
+
+The workflow for creating a report that is fully incorporated in the Equity Atlas can be found in the [Custom R Markdown Documentation](). An example of this in action can be seen in the [Stepping Stones Report](https://virginiaequitycenter.github.io/cville-equity-atlas/reports/stepping-stones/).
 
 ### Embed R Shiny apps
 
