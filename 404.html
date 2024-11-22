@@ -5,8 +5,13 @@ layout: default
 
 <style type="text/css" media="screen">
   .container {
-    margin: 100px auto;
-    max-width: 600px;
+    max-width: 1200px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 4.167%;
+    /* margin: 100px auto 50px auto;
+    max-width: 600px; */
     text-align: center;
   }
   h1 {
@@ -22,4 +27,84 @@ layout: default
 
   <p><strong>Page not found :(</strong></p>
   <p>The requested page could not be found.</p>
+
+  <p>Looking for one of our reports?</p>
+
+  <div class="grid-container">
+    <div class="project-card report">
+      <a href="{{ "/reports/orange-dot-6/" | prepend: site.url }}">
+        <div class="card-image">
+            <img src="{{ "/assets/img/income-region-map-edit.png" | prepend: site.url }}"/>
+        </div>
+        <div class="card-header">
+            Report | October 2024
+        </div>
+        <div class="card-content">
+                <h3>Orange Dot Report 6.0</h3>
+            <p>Family Self-Sufficiency in the Greater Charlottesville Region</p>    
+        </div>
+      </a>
+    </div>
+    <div class="project-card report">
+      <a href="{{ "/reports/school-composition/" | prepend: site.url }}">
+        <div class="card-image">
+            <img src="{{ "/assets/img/school-demographics.png" | prepend: site.url }}"/>
+        </div>
+        <div class="card-header">
+            Report | February 2024
+        </div>
+        <div class="card-content">
+                <h3>Local School Demographics</h3>
+            <p>Demographic composition of local schools provided by the Virginia Department of Education</p>    
+        </div>
+      </a>
+    </div>
+    
+  
+    <div class="project-card report">
+      <a href="{{ "/reports/stepping-stones/" | prepend: site.url }}">
+        <div class="card-image">
+                <img src="{{ "/assets/img/sol-detail-edit.png" | prepend: site.url }}"/>
+        </div>
+        <div class="card-header">
+            Report | June 2023
+        </div>
+        <div class="card-content">
+                <h3>Stepping Stones</h3>
+            <p>Report on Community Well-Being of Children and Families in Charlottesville and Albemarle</p>    
+        </div>
+      </a>
+    </div>
+  
+    <div class="project-card report">
+      <a href="{{ "/reports/orange-dot-5/" | prepend: site.url }}">
+        <div class="card-image">
+            <img src="{{ "/assets/img/living-wage-detail.png" | prepend: site.url }}"/>
+        </div>
+        <div class="card-header">
+            Report | October 2022
+        </div>
+        <div class="card-content">
+                <h3>Orange Dot Report 5.0</h3>
+            <p>Economic Indicators Directly Impacting Families Across the Greater Charlottesville Region</p>    
+        </div>
+      </a>
+    </div>
+    <div class="project-card report">
+      <a href="{{ "/reports/albemarle-equity-profile/" | prepend: site.url }}">
+        <div class="card-image">
+            <img src="{{ "/assets/img/alb-equity-detail.png" | prepend: site.url }}"/>
+        </div>
+        <div class="card-header">
+            Report | May 2021
+        </div>
+        <div class="card-content">
+            <h3>Albemarle County Equity Profile</h3>
+            <p>Centering Equity in Evaluating Well-Being & Quality of Life for Albemarle County Residents</p>    
+        </div>
+      </a>
+    </div>
+  
+  </div>
 </div>
+  
