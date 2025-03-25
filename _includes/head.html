@@ -13,15 +13,15 @@
   </script>
 
   {% capture fulltitle %}{% if page.title %}{{ page.title | escape | append: " | Charlottesville Regional Equity Atlas" }}{% else %}{{ site.title | escape }}{% endif %}{% endcapture %}
-  <title>{% if page.url == "/" %}{{ site.title }}{% else %}{{ fulltitle }} {% endif %}</title>
+  <title>{% if page.url == "/" %}{{ page.title }}{% else %}{{ fulltitle }} {% endif %}</title>
 
   {% assign description = page.excerpt | default: site.description | strip_html | normalize_whitespace | escape %}
   <meta name="description" content="{{ description }}">
 
   <!-- Open Graph http://ogp.me/ -->
+  <meta property="og:site_name" content="{{ site.title }}">
   <meta property="og:title" content="{{ page.title }}">
   <meta property="og:description" content="{{ description }}">
-  <meta property="og:site_name" content="{{ site.title }}">
   <meta property="og:type" content="{{ page.og_type }}">
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}">
   {% if page.image %}
@@ -34,10 +34,10 @@
   <meta property="og:image:height" content="{{ page.imageheight }}">
   {% endif %}
   {% else %}
-  <meta property="og:image" content="https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/assets/img/detail.png">
+  <meta property="og:image" content="https://github.com/virginiaequitycenter/cville-equity-atlas/blob/main/assets/img/atlas-image-card.png">
   <meta property="og:image:type" content="image/jpg">
-  <meta property="og:image:width" content="2134">
-  <meta property="og:image:height" content="1160">
+  <!-- <meta property="og:image:width" content="2134">
+  <meta property="og:image:height" content="1160"> -->
   {% endif %}
 
   {% if page.author.size > 0 %}
@@ -52,11 +52,11 @@
   {% endif %}
 
   <!-- Twitter Cards https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary -->
-  <meta name="twitter:card" content="summary">
+  <!-- <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="{{ site.twitter_username }}">
   <meta name="twitter:title" content="{{ fulltitle }}">
   <meta name="twitter:description" content="{{ description }}">
-  {% if page.image %}<meta property="twitter:image" content="{{ page.image }}">{% endif %}
+  {% if page.image %}<meta property="twitter:image" content="{{ page.image }}">{% endif %} -->
 
   <!-- Style Sheets -->
   <link rel="shortcut icon" type="image/png" sizes="32x32" href="{{ "/assets/img/ec-icon.png" | prepend: site.url }}"/>
