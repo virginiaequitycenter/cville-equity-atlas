@@ -1,5 +1,7 @@
 # Charlottesville Regional Equity Atlas
 
+**This site now redirects to: [https://communitypartnerships.github.io/data-resources/](https://communitypartnerships.github.io/data-resources/)**
+
 This is the repository for the [Charlottesville Regional Equity Atlas](https://virginiaequitycenter.github.io/cville-equity-atlas/) site, and documentation related to updating the site.
 
 There's a [homepage for all Atlas-related documentation here](https://github.com/virginiaequitycenter/cville-equity-atlas/tree/main/docs/README.md). This includes information on Jekyll, working with the site locally, publishing updates, and incorporating R Markdown documents.
