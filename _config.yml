@@ -36,3 +36,6 @@ defaults:
     values:
       is_page: true
       og_type: "website"
+
+plugins:
+  - jekyll-redirect-from
